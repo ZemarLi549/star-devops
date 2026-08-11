@@ -1,0 +1,69 @@
+plugin:
+  instance-id: ${PLUGIN_INSTANCE_ID:replace-me}
+  tenant-id: ${PLUGIN_TENANT_ID:replace-me}
+  user-id: ${PLUGIN_USER_ID:replace-me}
+  upload-token: ${PLUGIN_UPLOAD_TOKEN:replace-me}
+  cache-dir: ${PLUGIN_CACHE_DIR:./data}
+  log-dir: ${PLUGIN_LOG_DIR:./logs}
+
+nacos:
+  server-addr: ${NACOS_SERVER_ADDR:127.0.0.1:8848}
+  namespace: ${NACOS_NAMESPACE:st-observable}
+  group: ${NACOS_GROUP:auth-all}
+  data-id: ${NACOS_DATA_ID:cpo-feishu-collector-plugin.yaml}
+  username: ${NACOS_USERNAME:nacos}
+  password: ${NACOS_PASSWORD:nacos}
+
+platform:
+  gateway-base-url: ${PLATFORM_GATEWAY_BASE_URL:http://127.0.0.1:9004}
+  heartbeat-path: /api/productivity/plugin/heartbeat
+  upload-chat-events-path: /api/productivity/plugin/upload/chat-events
+  upload-meeting-stats-path: /api/productivity/plugin/upload/meeting-stats
+  upload-document-stats-path: /api/productivity/plugin/upload/document-stats
+  notification-path: /api/productivity/plugin/notification
+
+collector:
+  timezone: Asia/Shanghai
+  schedule-at: ${PLUGIN_SCHEDULE_AT:17:30}
+  batch-size: 200
+  heartbeat-seconds: 30
+  retry-max-attempts: 5
+  sync-lookback-minutes: 10
+  collect-chat-enabled: true
+  collect-meeting-enabled: false
+  collect-document-enabled: false
+  notify-on-failure: true
+
+feishu:
+  app-id: ${FEISHU_APP_ID:replace-me}
+  app-secret: ${FEISHU_APP_SECRET:replace-me}
+  auth-base-url: ${FEISHU_AUTH_BASE_URL:https://accounts.feishu.cn}
+  authorize-url: ${FEISHU_AUTHORIZE_URL:https://accounts.feishu.cn/open-apis/authen/v1/authorize}
+  token-url: ${FEISHU_TOKEN_URL:https://accounts.feishu.cn/oauth/v3/token}
+  open-base-url: ${FEISHU_OPEN_BASE_URL:https://open.feishu.cn/open-apis}
+  redirect-uri: ${FEISHU_REDIRECT_URI:http://127.0.0.1:17891/callback}
+  callback-addr: ${FEISHU_CALLBACK_ADDR:127.0.0.1:17891}
+  user-token-file: ${FEISHU_USER_TOKEN_FILE:./data/replace-me/meta/feishu-user-token.json}
+  rate-limit-per-chat: 50
+  auth-prompt: ${FEISHU_AUTH_PROMPT:consent}
+  auth-scopes:
+    - offline_access
+    - im:chat:readonly
+    - im:message:readonly
+    - im:message.p2p_msg:get_as_user
+    - im:message.group_msg:get_as_user
+
+filters:
+  include-group-ids: []
+  exclude-group-ids: []
+  include-group-names: []
+  exclude-group-names: []
+  include-group-regexes: []
+  exclude-group-regexes: ["(?i).*机器人.*", "(?i).*审批.*", "(?i).*通知.*", "(?i).*闲聊.*"]
+  include-keywords: []
+  exclude-keywords: ["午饭", "晚饭", "奶茶", "摸鱼", "游戏", "周末", "哈哈"]
+  idle-keywords: ["午饭", "晚饭", "奶茶", "摸鱼", "游戏", "周末", "哈哈", "表情"]
+  bot-keywords: ["机器人", "bot", "审批", "工作流", "通知", "告警机器人"]
+  work-keywords: ["发布", "工单", "告警", "联调", "故障", "回归", "上线", "排查", "需求", "版本"]
+  exclude-bot-interactions: true
+  content-analysis-enabled: false

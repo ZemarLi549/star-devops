@@ -1,0 +1,60 @@
+app:
+  name: cpo-ai-productivity-service
+
+server:
+  port: 9060
+
+nacos:
+  server-addr: ${NACOS_SERVER_ADDR:127.0.0.1:8848}
+  namespace: ${NACOS_NAMESPACE:st-observable}
+  group: ${NACOS_GROUP:auth-all}
+  data-id: ${NACOS_DATA_ID:cpo-ai-productivity-common.yaml}
+
+datasource:
+  workorder-pg:
+    host: ${WORKORDER_PG_HOST:127.0.0.1}
+    port: ${WORKORDER_PG_PORT:5432}
+    database: ${WORKORDER_PG_DATABASE:replace-me}
+    username: ${WORKORDER_PG_USERNAME:replace-me}
+    password: ${WORKORDER_PG_PASSWORD:replace-me}
+
+storage:
+  es-prefix: ${PRODUCTIVITY_ES_PREFIX:cpo-feishu-chat-event}
+  local-data-root: ${PRODUCTIVITY_LOCAL_DATA_ROOT:./data}
+  event-data-root: ${PRODUCTIVITY_EVENT_DATA_ROOT:./data/event-store}
+  raw-retention-days: ${PRODUCTIVITY_RAW_RETENTION_DAYS:15}
+  summary-retention-days: ${PRODUCTIVITY_SUMMARY_RETENTION_DAYS:180}
+
+elasticsearch:
+  enabled: ${PRODUCTIVITY_ES_ENABLED:false}
+  base-url: ${PRODUCTIVITY_ES_BASE_URL:http://127.0.0.1:9200}
+  api-key: ${PRODUCTIVITY_ES_API_KEY:}
+  username: ${PRODUCTIVITY_ES_USERNAME:}
+  password: ${PRODUCTIVITY_ES_PASSWORD:}
+  request-timeout-seconds: ${PRODUCTIVITY_ES_REQUEST_TIMEOUT_SECONDS:15}
+  verify-ssl: ${PRODUCTIVITY_ES_VERIFY_SSL:true}
+  raw-index-prefix: ${PRODUCTIVITY_ES_RAW_INDEX_PREFIX:cpo-productivity-chat-raw}
+  summary-index-prefix: ${PRODUCTIVITY_ES_SUMMARY_INDEX_PREFIX:cpo-productivity-summary}
+
+collector:
+  data-root: ${COLLECTOR_DATA_ROOT:../cpo-feishu-collector-plugin/data}
+
+astrbot:
+  base-url: ${ASTRBOT_BASE_URL:http://127.0.0.1:6185}
+  api-key: ${ASTRBOT_API_KEY:replace-me}
+  username: ${ASTRBOT_USERNAME:productivity-bot}
+  config-id: ${ASTRBOT_CONFIG_ID:default}
+  selected-provider: ${ASTRBOT_SELECTED_PROVIDER:deepseek}
+  selected-model: ${ASTRBOT_SELECTED_MODEL:deepseek-v4-flash}
+  request-timeout-seconds: ${ASTRBOT_REQUEST_TIMEOUT_SECONDS:120}
+
+reporting:
+  default-user-id: ${PRODUCTIVITY_DEFAULT_USER_ID:E0028517}
+  session-prefix: ${PRODUCTIVITY_REPORT_SESSION_PREFIX:productivity-daily}
+  batch-concurrency: ${PRODUCTIVITY_REPORT_BATCH_CONCURRENCY:2}
+
+notification:
+  local-data-root: ${PRODUCTIVITY_NOTIFICATION_DATA_ROOT:./data/notifications}
+  webhook-url: ${PRODUCTIVITY_NOTIFICATION_WEBHOOK_URL:}
+  webhook-type: ${PRODUCTIVITY_NOTIFICATION_WEBHOOK_TYPE:generic}
+  timeout-seconds: ${PRODUCTIVITY_NOTIFICATION_TIMEOUT_SECONDS:10}

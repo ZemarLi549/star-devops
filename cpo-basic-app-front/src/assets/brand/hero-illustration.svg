@@ -1,0 +1,55 @@
+<svg width="420" height="320" viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="heroCard" x1="80" y1="48" x2="334" y2="268" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6EB7FF"/>
+      <stop offset="0.58" stop-color="#2E71FF"/>
+      <stop offset="1" stop-color="#13C1A9"/>
+    </linearGradient>
+    <linearGradient id="heroPanel" x1="126" y1="78" x2="269" y2="211" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5FBFF"/>
+      <stop offset="1" stop-color="#CDEAFE"/>
+    </linearGradient>
+    <linearGradient id="heroChip" x1="176" y1="104" x2="251" y2="164" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#E5F7F2"/>
+    </linearGradient>
+    <filter id="shadow" x="59" y="36" width="303" height="246" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#3E6FDB" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+  <circle cx="210" cy="160" r="126" fill="#E6F2FF"/>
+  <circle cx="210" cy="160" r="148" stroke="#B8D9FF" stroke-width="2" stroke-dasharray="8 10"/>
+  <circle cx="210" cy="160" r="96" stroke="#CFE8FF" stroke-width="2"/>
+  <g filter="url(#shadow)">
+    <rect x="92" y="61" width="238" height="170" rx="28" transform="rotate(12 92 61)" fill="url(#heroCard)"/>
+    <rect x="121" y="84" width="144" height="98" rx="18" transform="rotate(12 121 84)" fill="url(#heroPanel)"/>
+    <rect x="177" y="101" width="70" height="54" rx="14" transform="rotate(12 177 101)" fill="url(#heroChip)"/>
+  </g>
+  <rect x="159" y="112" width="7" height="24" rx="3.5" transform="rotate(12 159 112)" fill="#3A7DFF"/>
+  <rect x="173" y="107" width="7" height="32" rx="3.5" transform="rotate(12 173 107)" fill="#58A2FF"/>
+  <rect x="187" y="117" width="7" height="20" rx="3.5" transform="rotate(12 187 117)" fill="#84C3FF"/>
+  <path d="M225 119C234 122 239 132 236 142C232 152 222 158 212 155C203 152 198 142 201 132C205 122 215 116 225 119Z" fill="#F7C654"/>
+  <path d="M56 114L89 122L72 151L39 143L56 114Z" fill="#4D8CFF"/>
+  <path d="M55 119L82 125L68 149L41 143L55 119Z" fill="#0F3D9A"/>
+  <path d="M63 123L74 126C80 127 83 134 80 139L75 147L54 142L59 129C60 125 61 123 63 123Z" fill="#9FD2FF"/>
+  <rect x="294" y="72" width="54" height="42" rx="12" fill="#FFFFFF"/>
+  <rect x="305" y="84" width="6" height="13" rx="3" fill="#4D8CFF"/>
+  <rect x="318" y="78" width="6" height="20" rx="3" fill="#58A2FF"/>
+  <rect x="331" y="88" width="6" height="10" rx="3" fill="#0FC0A8"/>
+  <g opacity="0.95">
+    <rect x="52" y="221" width="92" height="24" rx="12" transform="rotate(-12 52 221)" fill="#2F78FF"/>
+    <text x="74" y="236" transform="rotate(-12 74 236)" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="700">微服务接入</text>
+  </g>
+  <g opacity="0.95">
+    <rect x="300" y="213" width="82" height="24" rx="12" transform="rotate(11 300 213)" fill="#13B79F"/>
+    <text x="316" y="228" transform="rotate(11 316 228)" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="700">AI 分析</text>
+  </g>
+  <g opacity="0.95">
+    <rect x="305" y="127" width="82" height="24" rx="12" transform="rotate(-12 305 127)" fill="#5B9BFF"/>
+    <text x="321" y="142" transform="rotate(-12 321 142)" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="700">AstrBot</text>
+  </g>
+  <g opacity="0.95">
+    <rect x="118" y="48" width="82" height="24" rx="12" transform="rotate(13 118 48)" fill="#7CB4FF"/>
+    <text x="137" y="64" transform="rotate(13 137 64)" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="700">开箱即用</text>
+  </g>
+</svg>

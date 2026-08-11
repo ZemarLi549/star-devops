@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>-mockplus-</title>
+    <g id="过稿稿-新" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="切图/说明" transform="translate(-179.000000, -1024.000000)">
+            <g id="icon数据单元" transform="translate(179.000000, 1024.000000)">
+                <rect id="矩形" stroke="#1F69FF" fill="#1F69FF" x="2.5" y="2.5" width="11" height="2"></rect>
+                <rect id="矩形" stroke="#70A9FF" fill="#70A9FF" x="2.5" y="6.5" width="11" height="2"></rect>
+                <rect id="矩形" stroke="#1F69FF" fill="#1F69FF" x="2.5" y="10.5" width="11" height="2"></rect>
+                <polygon id="路径" fill="#FFFFFF" fill-rule="nonzero" points="3.65734311 3.1067959 5.30343364 3.1067959 5.30343364 3.92984117 3.65734311 3.92984117"></polygon>
+                <polygon id="路径" fill="#FFFFFF" fill-rule="nonzero" points="3.65734311 7.0885163 5.30343364 7.0885163 5.30343364 7.91156156 3.65734311 7.91156156"></polygon>
+                <polygon id="路径" fill="#FFFFFF" fill-rule="nonzero" points="3.65734311 11.0891933 5.30343364 11.0891933 5.30343364 11.9122385 3.65734311 11.9122385"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

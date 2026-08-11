@@ -1,0 +1,98 @@
+:root {
+  // 主色
+  --basic-el-color-primary: var(--df-color-primary-light-1);
+  --basic-el-text-color-primary: var(--df-color-primary);
+  --basic-el-text-color-regular: #595959;
+  --basic-el-text-color-secondary: var(--df-color-text-desc);
+  --basic-el-sidebar-divide-line-color: var(--df-border-color-light);
+  --basic-el-sidebar-item-height: 40px;
+  --basic-el-border-color: var(--df-border-color-light);
+  --basic-el-font-weight-primary: 400;
+
+  --df-color-primary-light-1: #1f69ff;
+  --df-color-primary-light-5: #478bff;
+  // 蓝色禁用色
+  --df-color-primary-light-7: #99c5ff;
+
+  --df-color-primary-light-8: #c2deff;
+  // 浅蓝背景色
+  --df-color-primary-light-9: #ebf5ff;
+  // 灰色浅背景色
+  --df-color-gray: #d9d9d9;
+  --df-color-gray-light-2: #f2f3f5;
+  // 按钮色
+  --df-color-button-active-text: #0f4cd9;
+  --df-color-button-danger-hover: #ff6369;
+  --df-color-button-danger-active: #d42637;
+  --df-color-button-success-hover: #38c233;
+  --df-black: #000;
+  --df-white: #fff;
+  --df-color-primary: #262626;
+
+  // 危险相关色
+  --df-color-danger-light-1: #ffb8b5;
+  --df-color-danger-light-2: #fff1f0;
+  --df-color-danger-light-3: #fa3946;
+  --df-color-danger-light-4: #ffe0de;
+  // 成功
+  --df-color-success-light-1: #8de184;
+  --df-color-success-light-2: #ecffe8;
+  --df-color-success-light-3: #d1f7cb;
+  --df-color-success: #12b312;
+  //警告
+  --df-color-warning-light-1: #fff7e6;
+  --df-color-warning-light-2: #ffcf87;
+  --df-color-warning-light-3: #ffe8bf;
+  --df-color-warning-light-4: #ffa136;
+  --df-color-warning: #fa830c;
+  --df-code-bg-color: #f7f8fa;
+  --basic-el-disabled-text-color: #bfbfbf;
+  // --df-button-font-weight: 400;
+  // --basic-el-border-color: #d9d9d9;
+  // 悬浮点击色
+  --df-color-hover: #f5f5f5;
+  --df-color-active: #e5e5e5;
+  --df-color-disabled: #bfbfbf;
+  // 暗色模式下的悬浮点击色
+  --df-dark-color-hover: #434343;
+  --df-dark-color-active: #5a5a5a;
+  --df-dark-color-text: #acacac;
+  --df-dark-menu-bg-color: #1d1d1d;
+  // 圆角
+  --df-border-radius: 4px;
+  --df-tag-border-radius: 2px;
+  --df-color-text-desc: #8c8c8c;
+  // --df-color-tree-selected: #f7f8fa;
+  // 边框
+  --basic-el-box-shadow-light: 0px 4px 10px 0px rgba(23, 24, 32, 0.1);
+  --basic-el-box-shadow: 0px 8px 20px 0px rgba(23, 24, 32, 0.1);
+  --basic-el-box-shadow-dark: 0px 16px 40px 0px rgba(23, 24, 32, 0.11);
+  // 链接
+  --basic-el-link-disabled-text-color: var(--df-color-disabled);
+  --df-border-color-light: #f0f0f0;
+  --basic-el-font-size-extra-sup-large: 24px;
+  // 副标题下边距
+  --df-subtitle-margin: 12px;
+
+  // 输入框
+  --basic-el-input-border-color: var(--df-color-gray);
+  --basic-el-input-hover-border: var(--df-color-primary-light-1);
+  --basic-el-input-hover-border-color: var(--df-color-primary-light-1);
+
+  --basic-el-radio-text-color: var(--df-color-primary);
+
+  // 多选框
+  --basic-el-checkbox-text-color: var(--df-color-primary);
+  --basic-el-checkbox-font-weight: 400;
+  --basic-el-checkbox-input-border: 1px solid var(--df-color-gray);
+
+  // 选择框
+  --basic-el-select-border-color-hover: var(--basic-el-color-primary);
+
+  --basic-el-radio-input-border: 1px solid var(--df-color-gray);
+  // 穿梭框
+  --basic-el-transfer-panel-header-bg-color: var(--df-code-bg-color);
+
+  --basic-el-card-border-color: var(--df-color-gray);
+  --basic-el-card-padding: 16px 20px;
+}

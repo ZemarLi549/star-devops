@@ -1,0 +1,46 @@
+// 主题暗黑
+.dark{
+  --theme-color: #fff;
+  --theme-color-primary-1: rgba(255,255,255,0.85);
+  --theme-background: #12233B;
+  --theme-boxshadow: 0px 1px 4px 0px rgba(19,22,27,0.15);
+  --hover-theme-background:rgba(255,255,255,0.10);
+  --hover-theme-color:#fff;
+  --theme-base-selector-label-background:rgba(255,255,255,0.10);
+  --theme-base-selector-border-color:#484F5C;
+  --theme-divider-vertical-border-color:rgba(255,255,255,0.30);
+
+  --basic-el-menu-base-tag-text-color:#FFFFFF;
+  --basic-el-menu-base-tag-text-opacity:0.65;
+  --basic-el-menu-text-color-custom:#fff;
+  --basic-el-menu-text-opacity: 0.85;
+  --basic-el-menu-bg-color-custom:#26364D;
+  --basic-el-menu-item-active-bg-color:#5F7292;
+  --basic-el-menu-active-color-custom:#fff;
+  --basic-el-menu-item-hover-bg-color:#1C2A3D;
+  --basic-el-menu-footer-width:200px;
+  --basic-el-menu-footer-height:97px;
+}
+// 主题明亮
+.light{
+  --theme-color: #0C101A;
+  --theme-color-primary-1: #3C485C;
+  --theme-background: #fff;
+  --theme-boxshadow: 0px 2px 10px 0px rgba(23,24,32,0.06); 
+  --hover-theme-background:#F1F2F5;
+  --hover-theme-color:#1F69FF;
+  --theme-base-selector-label-background:#fff;
+  --theme-base-selector-border-color:#D6DBE3;
+  --theme-divider-vertical-border-color:#E5E5E5;
+
+  --basic-el-menu-base-tag-text-color:#757F92;
+  --basic-el-menu-base-tag-text-opacity:1;
+  --basic-el-menu-text-color-custom:#3C485C;
+  --basic-el-menu-text-opacity: 1;
+  --basic-el-menu-bg-color-custom:#ECF1F8;
+  --basic-el-menu-active-color-custom:#fff;
+  --basic-el-menu-item-active-bg-color:#1F69FF;
+  --basic-el-menu-item-hover-bg-color:#DDE3ED;
+  --basic-el-menu-footer-width:200px;
+  --basic-el-menu-footer-height:97px;
+}

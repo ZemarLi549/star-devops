@@ -1,0 +1,1 @@
+export { default as NavBarSingleDeploy } from "./NavBar.vue";

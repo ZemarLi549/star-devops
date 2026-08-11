@@ -1,0 +1,6 @@
+logs/
+dist/
+config/application.yaml
+*.log
+*.local
+.DS_Store

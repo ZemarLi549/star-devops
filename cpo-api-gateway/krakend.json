@@ -1,0 +1,395 @@
+{
+  "$schema": "https://www.krakend.io/schema/v2.13/krakend.json",
+  "version": 3,
+  "port": 9000,
+  "timeout": "6s",
+  "extra_config": {
+    "router": {
+      "health_path": "/healthz",
+      "hide_version_header": true,
+      "disable_redirect_fixed_path": true,
+      "disable_redirect_trailing_slash": true,
+      "return_error_msg": true,
+      "logger_skip_paths": [
+        "/healthz"
+      ],
+      "error_body": {
+        "404": {
+          "code": 404,
+          "message": "route not found",
+          "data": null
+        },
+        "405": {
+          "code": 405,
+          "message": "method not allowed",
+          "data": null
+        }
+      }
+    }
+  },
+  "endpoints": [
+    {
+      "endpoint": "/auth/{resource}",
+      "method": "GET",
+      "output_encoding": "json",
+      "input_headers": ["Authorization", "Content-Type", "Accept", "X-Requested-With", "X-Plugin-Token"],
+      "input_query_strings": ["*"],
+      "extra_config": {
+        "qos/ratelimit/router": {
+          "max_rate": 300,
+          "capacity": 300,
+          "client_max_rate": 60,
+          "client_capacity": 60,
+          "every": "1m",
+          "strategy": "ip"
+        }
+      },
+      "backend": [
+        {
+          "host": ["http://host.docker.internal:9001"],
+          "url_pattern": "/auth/{resource}",
+          "method": "GET",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "name": "cb-auth-get-1",
+              "log_status_change": true
+            },
+            "backend/http": {
+              "return_error_code": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "endpoint": "/auth/{resource}",
+      "method": "POST",
+      "output_encoding": "json",
+      "input_headers": ["Authorization", "Content-Type", "Accept", "X-Requested-With", "X-Plugin-Token"],
+      "input_query_strings": ["*"],
+      "extra_config": {
+        "qos/ratelimit/router": {
+          "max_rate": 300,
+          "capacity": 300,
+          "client_max_rate": 60,
+          "client_capacity": 60,
+          "every": "1m",
+          "strategy": "ip"
+        }
+      },
+      "backend": [
+        {
+          "host": ["http://host.docker.internal:9001"],
+          "url_pattern": "/auth/{resource}",
+          "method": "POST",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "name": "cb-auth-post-1",
+              "log_status_change": true
+            },
+            "backend/http": {
+              "return_error_code": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "endpoint": "/auth/{resource}/{id}",
+      "method": "GET",
+      "output_encoding": "json",
+      "input_headers": ["Authorization", "Content-Type", "Accept", "X-Requested-With", "X-Plugin-Token"],
+      "input_query_strings": ["*"],
+      "extra_config": {
+        "qos/ratelimit/router": {
+          "max_rate": 300,
+          "capacity": 300,
+          "client_max_rate": 60,
+          "client_capacity": 60,
+          "every": "1m",
+          "strategy": "ip"
+        }
+      },
+      "backend": [
+        {
+          "host": ["http://host.docker.internal:9001"],
+          "url_pattern": "/auth/{resource}/{id}",
+          "method": "GET",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "name": "cb-auth-get-2",
+              "log_status_change": true
+            },
+            "backend/http": {
+              "return_error_code": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "endpoint": "/auth/{resource}/{id}",
+      "method": "POST",
+      "output_encoding": "json",
+      "input_headers": ["Authorization", "Content-Type", "Accept", "X-Requested-With", "X-Plugin-Token"],
+      "input_query_strings": ["*"],
+      "extra_config": {
+        "qos/ratelimit/router": {
+          "max_rate": 300,
+          "capacity": 300,
+          "client_max_rate": 60,
+          "client_capacity": 60,
+          "every": "1m",
+          "strategy": "ip"
+        }
+      },
+      "backend": [
+        {
+          "host": ["http://host.docker.internal:9001"],
+          "url_pattern": "/auth/{resource}/{id}",
+          "method": "POST",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "name": "cb-auth-post-2",
+              "log_status_change": true
+            },
+            "backend/http": {
+              "return_error_code": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "endpoint": "/auth/{resource}/{id}/{action}",
+      "method": "POST",
+      "output_encoding": "json",
+      "input_headers": ["Authorization", "Content-Type", "Accept", "X-Requested-With", "X-Plugin-Token"],
+      "input_query_strings": ["*"],
+      "extra_config": {
+        "qos/ratelimit/router": {
+          "max_rate": 300,
+          "capacity": 300,
+          "client_max_rate": 60,
+          "client_capacity": 60,
+          "every": "1m",
+          "strategy": "ip"
+        }
+      },
+      "backend": [
+        {
+          "host": ["http://host.docker.internal:9001"],
+          "url_pattern": "/auth/{resource}/{id}/{action}",
+          "method": "POST",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "name": "cb-auth-post-3",
+              "log_status_change": true
+            },
+            "backend/http": {
+              "return_error_code": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/productivity/{module}/{scope}",
+      "method": "GET",
+      "output_encoding": "json",
+      "input_headers": ["Authorization", "Content-Type", "Accept", "X-Requested-With", "X-Plugin-Token"],
+      "input_query_strings": ["*"],
+      "extra_config": {
+        "qos/ratelimit/router": {
+          "max_rate": 200,
+          "capacity": 200,
+          "client_max_rate": 40,
+          "client_capacity": 40,
+          "every": "1m",
+          "strategy": "ip"
+        }
+      },
+      "backend": [
+        {
+          "host": ["http://host.docker.internal:9060"],
+          "url_pattern": "/api/productivity/{module}/{scope}",
+          "method": "GET",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "name": "cb-productivity-get-2",
+              "log_status_change": true
+            },
+            "backend/http": {
+              "return_error_code": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/productivity/{module}/{scope}/{action}",
+      "method": "GET",
+      "output_encoding": "json",
+      "input_headers": ["Authorization", "Content-Type", "Accept", "X-Requested-With", "X-Plugin-Token"],
+      "input_query_strings": ["*"],
+      "extra_config": {
+        "qos/ratelimit/router": {
+          "max_rate": 200,
+          "capacity": 200,
+          "client_max_rate": 40,
+          "client_capacity": 40,
+          "every": "1m",
+          "strategy": "ip"
+        }
+      },
+      "backend": [
+        {
+          "host": ["http://host.docker.internal:9060"],
+          "url_pattern": "/api/productivity/{module}/{scope}/{action}",
+          "method": "GET",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "name": "cb-productivity-get-3",
+              "log_status_change": true
+            },
+            "backend/http": {
+              "return_error_code": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/productivity/{module}/{scope}/{action}",
+      "method": "POST",
+      "output_encoding": "json",
+      "input_headers": ["Authorization", "Content-Type", "Accept", "X-Requested-With", "X-Plugin-Token"],
+      "input_query_strings": ["*"],
+      "extra_config": {
+        "qos/ratelimit/router": {
+          "max_rate": 120,
+          "capacity": 120,
+          "client_max_rate": 24,
+          "client_capacity": 24,
+          "every": "1m",
+          "strategy": "ip"
+        }
+      },
+      "backend": [
+        {
+          "host": ["http://host.docker.internal:9060"],
+          "url_pattern": "/api/productivity/{module}/{scope}/{action}",
+          "method": "POST",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "name": "cb-productivity-post-3",
+              "log_status_change": true
+            },
+            "backend/http": {
+              "return_error_code": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/astrbot/{module}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": ["Authorization", "Content-Type", "Accept", "X-Requested-With", "X-Plugin-Token"],
+      "input_query_strings": ["*"],
+      "extra_config": {
+        "qos/ratelimit/router": {
+          "max_rate": 120,
+          "capacity": 120,
+          "client_max_rate": 24,
+          "client_capacity": 24,
+          "every": "1m",
+          "strategy": "ip"
+        }
+      },
+      "backend": [
+        {
+          "encoding": "no-op",
+          "host": ["http://host.docker.internal:6185"],
+          "url_pattern": "/api/astrbot/{module}",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/astrbot/{module}/{action}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": ["Authorization", "Content-Type", "Accept", "X-Requested-With", "X-Plugin-Token"],
+      "input_query_strings": ["*"],
+      "extra_config": {
+        "qos/ratelimit/router": {
+          "max_rate": 120,
+          "capacity": 120,
+          "client_max_rate": 24,
+          "client_capacity": 24,
+          "every": "1m",
+          "strategy": "ip"
+        }
+      },
+      "backend": [
+        {
+          "encoding": "no-op",
+          "host": ["http://host.docker.internal:6185"],
+          "url_pattern": "/api/astrbot/{module}/{action}",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/astrbot/{module}/{action}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": ["Authorization", "Content-Type", "Accept", "X-Requested-With", "X-Plugin-Token"],
+      "input_query_strings": ["*"],
+      "extra_config": {
+        "qos/ratelimit/router": {
+          "max_rate": 80,
+          "capacity": 80,
+          "client_max_rate": 16,
+          "client_capacity": 16,
+          "every": "1m",
+          "strategy": "ip"
+        }
+      },
+      "backend": [
+        {
+          "encoding": "no-op",
+          "host": ["http://host.docker.internal:6185"],
+          "url_pattern": "/api/astrbot/{module}/{action}",
+          "method": "POST"
+        }
+      ]
+    }
+  ]
+}

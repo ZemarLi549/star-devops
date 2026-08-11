@@ -1,0 +1,117 @@
+# Tomcat
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+    max-connections: 100000
+    connection-timeout: 180000
+  port: 9004
+  connection-timeout: 180000ms
+  servlet:
+    context-path: /auth
+
+nginx:
+  url: http://172.30.94.78:80
+
+captcha:
+  prefix: captcha
+  expire:
+    default: 10000
+    WORD_IMAGE_CLICK: 20000
+  init-default-resource: false
+  cache:
+    enabled: true
+    cacheSize: 20
+    wait-time: 5000
+    period: 2000
+    secondary:
+      enabled: false
+      expire: 120000
+      keyPrefix: "captcha:secondary"
+
+token:
+  expire:
+    access-token-expire: 60
+    refresh-token-expire: 120
+user:
+    expire: 30
+
+authentication:
+  type: inner
+  # LOCAL：仅本地账号；LDAP：仅 LDAP；MIXED：登录页允许用户选择
+  login-mode: LOCAL
+  ldap:
+    url: ""
+    base-dn: ""
+    bind-dn: ""
+    bind-password: ""
+    user-search-base: ""
+    user-search-filter: "(sAMAccountName={0})"
+    connect-timeout-ms: 5000
+    read-timeout-ms: 5000
+
+inner:
+  auth:
+    excludeUrls: /login,/loginMode,/captcha,/logout,/refreshToken,/loginInfo,/authChange,/authentication/authorization/applications,/authentication/authorization/dataGroups,/authentication/authorization/dataGroupName,/permission/**,/metaAndMenu/**,/initCipherData
+  apiPermission:
+    excludeUrls: /auth/workspace,/auth/guideState,/auth/userBaseInfo,/auth/updateUser,/auth/updatePassword,/auth/menu
+
+cache:
+ type: redis
+
+spring:
+  redis:
+    host: 172.30.94.79
+    port: 6379
+    password: DiIegiS2qGCVe7Cw
+    database: 0
+    timeout: 5000
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 4
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://172.30.94.79:23306/aiops_resource?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: root
+      password: 5wTOkcpffV17Okj6
+      initial-size: 10
+      max-active: 100
+      min-idle: 10
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 1000
+          merge-sql: false
+        wall:
+          config:
+            multi-statement-allow: true
+
+init-admin-account: admin
+deploy_mode: all
+
+security:
+  select: default
+
+management:
+  endpoints:
+    enabled-by-default: false
+  endpoint:
+    health:
+      enabled: true

@@ -1,0 +1,34 @@
+/*
+ * @Author: zhewu4 
+ * @Date: 2023-11-28 16:56:05 
+ * @Last Modified by:   zhewu4 
+ * @Last Modified time: 2023-11-28 16:56:05 
+ */
+
+export const HTTP_SUCCESS_CODE = 0
+
+export const HTTP_ERROR_CODE = 1
+
+export const HTTP_CLIENT_ERROR_CODE = 404
+
+export const HTTP_SERVER_ERROR_CODE = 500
+
+export const HTTP_UNLOGIN_CODE = 6666
+
+export const HTTP_CODE = {
+  [HTTP_CLIENT_ERROR_CODE]: '接口地址不正确',
+  [HTTP_SERVER_ERROR_CODE]: '服务器内部错误'
+}
+
+export const HTTP_SUCCESS_STATUS = 200
+
+export const ERROR_CODE = {
+  CAPTCHA_ERROR: 'CAPTCHA_ERROR',
+  REFRESH_TOKEN_EXCEED_TIME: 'REFRESH_TOKEN_EXCEED_TIME',
+  TOKEN_EXCEED_TIME: 'TOKEN_EXCEED_TIME',
+  PASSWORD_MODIFIED: 'PASSWORD_MODIFIED',
+  TOKEN_LOGOUT: 'TOKEN_LOGOUT',
+  USER_NOT_FOUND: 'USER_NOT_FOUND',
+  NEED_LOGIN: 'NEED_LOGIN',
+  USER_IS_DISABLED: 'USER_IS_DISABLED'
+}

@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "docs:dev": "cross-env VITE_MODE=public vitepress dev",
+    "docs:dev/private": "cross-env VITE_MODE=private vitepress dev",
+    "docs:build": "cross-env VITE_MODE=public vitepress build",
+    "docs:build/private": "cross-env VITE_MODE=private vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  },
+  "dependencies": {
+    "vitepress-test": "^2.2.1"
+  }
+}

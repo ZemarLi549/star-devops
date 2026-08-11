@@ -1,0 +1,39 @@
+app:
+  name: cpo-api-gateway
+
+server:
+  port: 9000
+
+gateway:
+  default-timeout-ms: 5000
+
+auth:
+  enabled: false
+  skip-paths:
+    - /healthz
+    - /api/gateway/meta
+    - /auth/login
+    - /auth/singleLogin
+
+routes:
+  - name: auth-all
+    path-prefix: /auth/
+    target-base-url: http://127.0.0.1:9001/auth/
+    timeout-ms: 5000
+    rate-limit-per-minute: 600
+    circuit-breaker-failures: 5
+    circuit-breaker-reset-seconds: 30
+  - name: ai-productivity
+    path-prefix: /api/productivity/
+    target-base-url: http://127.0.0.1:9060/api/productivity/
+    timeout-ms: 6000
+    rate-limit-per-minute: 300
+    circuit-breaker-failures: 5
+    circuit-breaker-reset-seconds: 30
+  - name: astrbot
+    path-prefix: /api/astrbot/
+    target-base-url: http://127.0.0.1:6185/api/astrbot/
+    timeout-ms: 10000
+    rate-limit-per-minute: 180
+    circuit-breaker-failures: 3
+    circuit-breaker-reset-seconds: 20

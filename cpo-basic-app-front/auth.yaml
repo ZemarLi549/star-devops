@@ -1,0 +1,183 @@
+# Tomcat
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+    max-connections: 100000  #最大连接数
+    connection-timeout: 180000 #连接超时
+  port: 9004
+  connection-timeout: 180000ms
+  servlet:
+    context-path: /auth
+
+nginx:
+  url: http://127.0.0.1:80
+
+captcha:
+  # 如果项目中使用到了redis，滑块验证码会自动把验证码数据存到redis中， 这里配置redis的key的前缀,默认是captcha:slider
+  prefix: captcha
+  # 验证码过期时间，默认是2分钟,单位毫秒， 可以根据自身业务进行调整
+  expire:
+    # 默认缓存时间 2分钟
+    default: 10000
+    # 针对 点选验证码 过期时间设置为 2分钟， 因为点选验证码验证比较慢，把过期时间调整大一些
+    WORD_IMAGE_CLICK: 20000
+  # 使用加载系统自带的资源， 默认是 false
+  init-default-resource: false
+  cache:
+    # 缓存控制， 默认为false不开启
+    enabled: true
+    # 验证码会提前缓存一些生成好的验证数据， 默认是20
+    cacheSize: 20
+    # 缓存拉取失败后等待时间 默认是 5秒钟
+    wait-time: 5000
+    # 缓存检查间隔 默认是2秒钟
+    period: 2000
+    secondary:
+      # 二次验证， 默认false 不开启
+      enabled: false
+      # 二次验证过期时间， 默认 2分钟
+      expire: 120000
+      # 二次验证缓存key前缀，默认是 captcha:secondary
+      keyPrefix: "captcha:secondary"
+
+token:
+  expire:
+    access-token-expire: 60 #token 过期时间 单位分钟
+    refresh-token-expire: 120 #refreshToken 过期时间 单位分钟
+user:
+    expire: 30 #用户信息过期时间，单位天
+
+authentication:
+  type: inner #认证有三种类型 inner/sso/uap
+
+inner:
+  auth:
+    excludeUrls: /login,/captcha,/logout,/refreshToken,/loginInfo,/authChange,/authentication/authorization/applications,/authentication/authorization/dataGroups,/authentication/authorization/dataGroupName,/permission/**,/metaAndMenu/**,/initCipherData # 认证和授权不进行拦截的路径
+  apiPermission:
+    excludeUrls: /auth/workspace,/auth/guideState,/auth/userBaseInfo,/auth/updateUser,/auth/updatePassword,/auth/menu
+
+cache:
+ type: redis  # 可选值redis，local
+
+spring:
+  redis:
+    # 单例模式
+    host: 192.168.32.128
+    port: 6379
+    password: zemarli_549
+
+    # 集群模式
+    #    cluster:
+    #      nodes: 127.0.0.1:6379,127.0.0.2:6379,127.0.0.3:6379
+    #      max-redirects: 3  # 重定向的最大次数
+    #    password: redis-password
+
+    # 哨兵模式
+    #    sentinel:
+    #      master: mymaster
+    #      nodes: 127.0.0.1:6379,127.0.0.2:6379,127.0.0.3:6379
+    #    password: redis-password
+
+    database: 0   # 数据库索引，默认0
+    timeout: 5000  # 连接超时，单位ms
+    lettuce: # 或lettuce, 连接池配置，springboot2.0中使用jedis或者lettuce配置连接池，默认为lettuce连接池
+      pool:
+        max-active: 8 # 连接池最大连接数（使用负值表示没有限制）
+        max-wait: -1 # 连接池分配连接最大阻塞等待时间（阻塞时间到，抛出异常。使用负值表示无限期阻塞）
+        max-idle: 8 # 连接池中的最大空闲连接数
+        min-idle: 4 # 连接池中的最小空闲连接数
+  # jackson时间格式化
+  jackson:
+    #time-zone: GMT+8
+    #date-format: yyyy-MM-dd HH:mm:ss
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      ######### DM数据库配置 start #########
+      #driver-class-name: dm.jdbc.driver.DmDriver
+      #url: jdbc:dm://127.0.0.1:5236/AIOPS_RESOURCE?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      #username: SYSDBA
+      #password: SYSDBA
+      ######### DM数据库配置 end #########
+      ######### Mysql数据库配置 start #########
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://192.168.32.128:3306/aiops_resource?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: root
+      password: 123456
+      ######### Mysql数据库配置 end #########
+      ######### doris数据库配置 start #########
+     # driver-class-name: com.mysql.jdbc.Driver
+     # url: jdbc:mysql://127.0.0.1:9030/aiops_resource?characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+     # username: doris-user
+     # password: doris-password
+      ######### doris数据库配置 end #########
+      initial-size: 10
+      max-active: 100
+      min-idle: 10
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      #Oracle需要打开注释
+      #validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        #login-username: admin
+        #login-password: admin
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 1000
+          merge-sql: false
+        wall:
+          config:
+            multi-statement-allow: true
+
+
+uap: #集成uap 相关配置
+  rest-server-url: http://127.0.0.1:8380/uap-server/rest #uap-server服务认证地址
+  app-code: yy_1718692937666 #当前应用编码(uap-manager应用管理菜单中获取)
+  app-auth-code: LJI313WJACZP3YJAGHGFIM0NFCLSYL78
+
+
+## 初始化超管账号及超管关系，填写账号，多个英文逗号分隔。已存在但未配置的超管关系会移除，用户会保留
+init-admin-account: admin
+
+# 部署方式 single独立部署，all非独立部署。默认all，有独立部署需求的再改。
+deploy_mode: all
+
+security:
+  select: default  #default=不开启加密 san=三未信安加密  haitai=海泰加密
+
+## 利川用
+sign:
+  san:
+    key:
+      id: SM4_test #根据环境对应修改
+    app:
+      id: app1  #根据环境对应修改
+      pws: Aa123456 #根据环境对应修改
+    config:
+      path: /data/service/auth-all/config/swsds.ini #根据打包后的swsds.ini具体位置修改
+  haitai:
+    keyId: 45def5d8dc82452db034311f17ec602f #数据唯一密钥，可以不传，不传海泰平台会自己生成，会使得同一个字符多次加密后的字符串不一致，获取的话可以通过postman调用海泰的密钥生成接口获取
+    appCode: 9549e2d10c3b406bb5f6ac7bd07d2fba #应用code,需要海泰管理员创建发放
+    url: http://127.0.0.1:18849 #机密性海泰密码服务平台地址
+    integralityUrl: http://127.0.0.1:8083 #完整性海泰密码服务平台地址
+
+
+management:
+  endpoints:
+    enabled-by-default: false
+  endpoint:
+    health:
+      enabled: true
+
+

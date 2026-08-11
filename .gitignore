@@ -1,0 +1,57 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Logs / runtime state
+**/logs/
+**/*.log
+**/*.pid
+**/*.out
+
+# Local configuration and secrets
+**/config/application.yaml
+**/config/*.local.yaml
+**/config/*.secret.yaml
+**/.env
+**/.env.*
+**/*.local
+
+# Node / frontend builds
+**/node_modules/
+**/dist/
+**/dist-ssr/
+**/.vite/
+**/coverage/
+**/stats.html
+
+# Python runtime
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+**/.mypy_cache/
+**/.venv/
+**/venv/
+
+# Java / Go / generic build outputs
+**/target/
+**/build/
+**/out/
+**/.gradle/
+**/*.class
+**/*.jar
+**/*.war
+**/*.exe
+**/*.dll
+**/*.so
+**/*.dylib
+
+# Generated data / packages
+**/data/
+**/releases/
+**/.tmp-package/
+**/collector
+**/feishu-auth-qrcode.png

@@ -1,0 +1,493 @@
+@use './element-variables';
+
+// 日期选择器全局样式
+.basic-el-date-editor.basic-el-input__wrapper {
+  border: 1px solid var(--df-color-gray);
+  box-shadow: none;
+  &:hover {
+    border-color: var(--df-color-primary-light-1);
+    box-shadow: none;
+  }
+}
+.basic-el-range-editor.is-active {
+  border-color: var(--df-color-primary-light-1);
+  box-shadow: none;
+}
+
+.basic-el-date-picker {
+  width: 288px;
+  &__header {
+    border-bottom: 1px solid var(--df-border-color-light);
+    padding: 4px;
+    margin: 0;
+    .basic-el-icon {
+      color: var(--df-color-text-desc);
+    }
+    .basic-el-picker-panel__icon-btn {
+      margin-top: 4px;
+      padding-top: 4px;
+    }
+    button {
+      &:hover {
+        color: var(--df-color-text-desc);
+        background-color: var(--df-color-hover);
+      }
+      &:active {
+        color: var(--df-color-text-desc);
+        background-color: var(--df-color-active);
+      }
+    }
+    &-label {
+      color: var(--df-color-primary);
+    }
+  }
+  .basic-el-picker-panel__link-btn {
+    border-color: var(--df-color-gray);
+    &:hover {
+      border-color: var(--df-color-primary-light-1);
+      color: var(--df-color-primary-light-1);
+      background-color: var(--df-color-primary-light-9);
+    }
+    &:active {
+      border-color: var(--df-color-button-active-text);
+      color: var(--df-color-button-active-text);
+      background-color: var(--df-color-primary-light-8);
+    }
+    &:focus {
+      border-color: var(--df-color-button-active-text);
+      color: var(--df-color-button-active-text);
+      background-color: var(--df-color-primary-light-8);
+    }
+  }
+  .basic-el-picker-panel__content {
+    width: auto;
+  }
+  &.has-sidebar {
+    width: 400px;
+  }
+}
+.basic-el-date-range-picker__time-header {
+  span {
+    &:nth-child(2) {
+      vertical-align: middle;
+    }
+  }
+}
+.basic-el-picker-panel {
+  &__content {
+    margin: 12px 20px;
+  }
+  &__sidebar {
+    border-right-color: var(--df-border-color-light);
+    button.basic-el-picker-panel__shortcut {
+      width: 83%;
+      padding: 4px;
+      margin-left: 8px;
+      line-height: 24px;
+      &:hover {
+        border-radius: var(--df-border-radius);
+        color: inherit;
+        background-color: var(--df-color-hover);
+      }
+    }
+  }
+  &__footer {
+    border-color: #f0f0f0;
+    button {
+      &:last-child {
+        border-color: var(--df-color-primary-light-1);
+        background-color: var(--df-color-primary-light-1);
+        span {
+          color: #fff;
+        }
+        &:hover {
+          border-color: var(--df-color-primary-light-5);
+          background-color: var(--df-color-primary-light-5);
+        }
+      }
+    }
+  }
+}
+// 头部
+.basic-el-date-picker__header {
+  &-label {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+// 各类表格的共用样式
+.basic-el-date-table-cell__text {
+  box-sizing: border-box;
+}
+.basic-el-date-table td.available,
+.basic-el-year-table td,
+.basic-el-month-table td {
+  .cell {
+    font-size: 14px;
+    border-radius: var(--df-border-radius);
+    color: var(--df-black);
+    &:hover {
+      color: var(--df-black);
+      background: var(--df-color-hover);
+    }
+    &:active {
+      color: var(--df-black);
+      background-color: var(--df-color-active);
+    }
+  }
+  .basic-el-date-table-cell {
+    color: var(--df-black);
+    .text,
+    .basic-el-date-table-cell__text {
+      border: 1px solid transparent;
+      line-height: 23px;
+      border-radius: var(--df-border-radius);
+      color: var(--df-black);
+      &:hover {
+        color: var(--df-black);
+        background: var(--df-color-hover);
+      }
+      &:active {
+        color: var(--df-black);
+        background-color: var(--df-color-active);
+      }
+    }
+  }
+
+  // 今天
+  &.today {
+    &:not(.current) {
+      .cell,
+      .basic-el-date-table-cell {
+        .basic-el-date-table-cell__text {
+          border: 1px solid var(--basic-el-color-primary);
+          font-weight: normal;
+        }
+      }
+    }
+  }
+  &.today:not(.current):not(.in-range)
+    .basic-el-date-table-cell
+    .basic-el-date-table-cell__text {
+    color: var(--df-black);
+  }
+  &.current {
+    &:not(.disabled) {
+      .cell {
+        color: var(--df-white);
+        background: var(--df-color-primary-light-1);
+        &:hover {
+          background: var(--df-color-primary-light-1);
+        }
+      }
+    }
+  }
+}
+
+// 普通单元格样式
+.basic-el-date-table {
+  th {
+    border-bottom: none;
+  }
+  td {
+    font-size: 14px;
+    padding: 5px 0;
+    .basic-el-date-table-cell {
+      height: 24px;
+      padding: 0 3px;
+    }
+    &.disabled {
+      .basic-el-date-table-cell {
+        color: var(--df-color-disabled);
+      }
+    }
+    // 当前单元格
+    &.current {
+      .cell {
+        .text {
+          background: var(--df-color-primary-light-1);
+        }
+      }
+      // 点中后改字体颜色 除了禁用的
+      &:not(.disabled) {
+        .basic-el-date-table-cell__text {
+          color: var(--df-white);
+          &:hover {
+            color: var(--df-black);
+          }
+        }
+      }
+    }
+    // 起始
+    &.start-date,
+    &.end-date {
+      .basic-el-date-table-cell {
+        &:hover {
+          color: var(--df-white);
+          background: var(--df-color-primary-light-1);
+        }
+        .basic-el-date-table-cell__text {
+          background: var(--basic-el-color-primary);
+          color: var(--df-white);
+          &:hover {
+            color: var(--df-white);
+            background: var(--df-color-primary-light-1);
+          }
+          &:active {
+            color: var(--df-white);
+            background-color: var(--df-color-primary-light-1);
+          }
+        }
+      }
+    }
+    // 范围内
+    &.in-range {
+      &:not(.start-date, .end-date) {
+        .basic-el-date-table-cell {
+          border-radius: 0;
+          background: var(--df-color-primary-light-9);
+          &:hover {
+            color: var(--df-white);
+            background: var(--df-color-primary-light-9);
+          }
+          &:active {
+            color: var(--df-white);
+            background: var(--df-color-primary-light-9);
+          }
+        }
+      }
+      &.start-date {
+        .basic-el-date-table-cell {
+          margin-left: 0;
+          background: var(--df-color-primary-light-1);
+          border-top-left-radius: var(--df-border-radius);
+          border-bottom-left-radius: var(--df-border-radius);
+          background-color: var(--df-color-primary-light-1);
+        }
+      }
+      &.end-date {
+        .basic-el-date-table-cell {
+          margin-right: 0;
+          background: var(--df-color-primary-light-1);
+          border-top-right-radius: var(--df-border-radius);
+          border-bottom-right-radius: var(--df-border-radius);
+          background-color: var(--df-color-primary-light-1);
+        }
+      }
+    }
+    // 多选
+    &.selected {
+      .basic-el-date-table-cell {
+        border-radius: var(--df-border-radius);
+        background-color: var(--df-white);
+        .basic-el-date-table-cell__text {
+          color: var(--df-white);
+          &:hover {
+            color: var(--df-black);
+          }
+        }
+      }
+    }
+    // 上个月后个月禁用
+    &.next-month,
+    &.prev-month {
+      .basic-el-date-table-cell {
+        .basic-el-date-table-cell__text {
+          color: var(--df-color-disabled);
+        }
+      }
+    }
+  }
+
+  // 周选择
+  &.is-week-mode {
+    .basic-el-date-table__row {
+      td {
+        .basic-el-date-table-cell {
+          border-radius: 0;
+        }
+        &:first-child {
+          .basic-el-date-table-cell {
+            border-top-left-radius: var(--df-border-radius);
+            border-bottom-left-radius: var(--df-border-radius);
+          }
+        }
+        &:last-child {
+          .basic-el-date-table-cell {
+            border-top-right-radius: var(--df-border-radius);
+            border-bottom-right-radius: var(--df-border-radius);
+          }
+        }
+      }
+      &:hover {
+        td {
+          .basic-el-date-table-cell {
+            border-radius: 0;
+            background: var(--df-color-hover);
+          }
+          &:first-child {
+            .basic-el-date-table-cell {
+              margin-left: 0;
+              border-top-left-radius: var(--df-border-radius);
+              border-bottom-left-radius: var(--df-border-radius);
+            }
+          }
+          &:last-child {
+            .basic-el-date-table-cell {
+              margin-right: 0;
+              border-top-right-radius: var(--df-border-radius);
+              border-bottom-right-radius: var(--df-border-radius);
+            }
+          }
+        }
+      }
+      // 当前周
+      &.current {
+        td:not(.start-date, .end-date) {
+          .basic-el-date-table-cell {
+            background: var(--df-color-primary-light-9);
+            &:hover {
+              background: var(--df-color-primary-light-9);
+            }
+            .basic-el-date-table-cell__text {
+              border-radius: var(--df-border-radius);
+              &:hover {
+                background: var(--df-color-primary-light-9);
+              }
+              &:active {
+                background-color: var(--df-color-primary-light-1);
+              }
+            }
+          }
+        }
+        .start-date,
+        .end-date {
+          .basic-el-date-table-cell {
+            background: var(--df-color-primary-light-1);
+          }
+        }
+
+        &:hover {
+          td {
+            &:first-child {
+              .basic-el-date-table-cell {
+                border-top-left-radius: var(--df-border-radius);
+                border-bottom-left-radius: var(--df-border-radius);
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+              }
+            }
+            &:last-child {
+              .basic-el-date-table-cell {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                border-top-right-radius: var(--df-border-radius);
+                border-bottom-right-radius: var(--df-border-radius);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.basic-el-date-picker__header--bordered + .basic-el-picker-panel__content {
+  margin-top: 12px;
+}
+.basic-el-year-table,
+.basic-el-month-table {
+  td {
+    padding: 14px 0;
+    // 今天
+    &.today {
+      .basic-el-date-table-cell__text,
+      .cell {
+        border: 1px solid var(--basic-el-color-primary);
+        font-weight: normal;
+      }
+    }
+    &.today:not(.in-range) {
+      .basic-el-date-table-cell__text,
+      .cell {
+        color: var(--df-black);
+      }
+    }
+    &.start-date,
+    &.end-date {
+      div {
+        background: var(--df-color-primary-light-1);
+        &:hover {
+          background: var(--df-color-primary-light-1);
+        }
+        .cell {
+          color: var(--df-white);
+          background: var(--df-color-primary-light-1);
+          &:hover {
+            background: var(--df-color-primary-light-1);
+          }
+        }
+      }
+    }
+    &.start-date {
+      div {
+        // border-radius: var(--df-border-radius);
+        border-top-left-radius: var(--df-border-radius);
+        border-bottom-left-radius: var(--df-border-radius);
+      }
+    }
+    &.end-date {
+      div {
+        background: var(--df-color-primary-light-1);
+        border-top-right-radius: var(--df-border-radius);
+        border-bottom-right-radius: var(--df-border-radius);
+      }
+    }
+    div {
+      height: 24px;
+      padding: 0;
+    }
+    // 年月 范围
+    &.in-range:not(.start-date, .end-date) {
+      div {
+        background: var(--df-color-primary-light-9);
+        .cell {
+          color: var(--df-black);
+        }
+      }
+    }
+
+    .cell {
+      height: 24px;
+      line-height: 24px;
+    }
+  }
+}
+//
+// 日期选择器hover颜色
+.basic-el-date-range-picker {
+  &__content {
+    padding-top: 0;
+    &.is-left {
+      border-right: none;
+    }
+  }
+  &__header {
+    border-bottom: 1px solid var(--df-border-color-light);
+    height: 40px;
+    padding-top: 5px;
+    margin-bottom: 12px;
+    div {
+      font-size: 14px;
+    }
+  }
+}
+.basic-el-range-editor {
+  border: 1px solid var(--df-color-gray);
+}
+
+// // 下拉多选框选择颜色
+// .observer-alarm-el-tag.observer-alarm-el-tag--info{
+//   color:#262626;
+//   background:#f5f5f5;
+// }

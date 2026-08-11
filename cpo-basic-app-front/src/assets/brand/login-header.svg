@@ -1,0 +1,21 @@
+<svg width="880" height="208" viewBox="0 0 880 208" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="headerGradient" x1="34" y1="16" x2="842" y2="184" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EEF7FF"/>
+      <stop offset="0.55" stop-color="#E6FFF9"/>
+      <stop offset="1" stop-color="#F5F7FC"/>
+    </linearGradient>
+    <linearGradient id="headerAccent" x1="118" y1="32" x2="266" y2="198" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A7CFF" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#15C6A1" stop-opacity="0.28"/>
+    </linearGradient>
+  </defs>
+  <rect width="880" height="208" rx="8" fill="url(#headerGradient)"/>
+  <path d="M84 38C133 14 212 21 252 64C287 101 291 165 259 208H0V112C18 86 50 56 84 38Z" fill="url(#headerAccent)"/>
+  <path d="M678 -8L786 26L742 118L638 85L678 -8Z" fill="#E7F8FF"/>
+  <path d="M766 72L882 118L838 210L722 164L766 72Z" fill="#F0FFF9"/>
+  <path d="M86 52H112L97 85L112 118H86L71 85L86 52Z" fill="#CFE3FF" fill-opacity="0.82"/>
+  <path d="M160 52H134L149 85L134 118H160L175 85L160 52Z" fill="#E9FFFA" fill-opacity="0.86"/>
+  <path d="M123 42L152 56V114L123 128L94 114V56L123 42Z" fill="#102241"/>
+  <path d="M123 59L129 74L144 80L129 86L123 101L117 86L102 80L117 74L123 59Z" fill="#69FFE4"/>
+</svg>

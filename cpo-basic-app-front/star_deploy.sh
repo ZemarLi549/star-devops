@@ -1,0 +1,3 @@
+rm -f ./dist.zip
+zip -r dist.zip dist
+cp ./dist.zip /data/tmpdir/basic-app_dist.zip

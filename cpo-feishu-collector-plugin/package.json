@@ -1,0 +1,13 @@
+{
+  "name": "cpo-feishu-collector-plugin",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "鑫图平台个人部署式飞书协同采集插件",
+  "scripts": {
+    "collect": "node bin/collector.mjs --once --no-upload",
+    "start": "node bin/collector.mjs --daemon --no-upload",
+    "stop": "bash bin/stop.sh",
+    "demo:e0028517": "PLUGIN_USER_ID=E0028517 node bin/collector.mjs --once --no-upload"
+  }
+}

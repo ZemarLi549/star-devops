@@ -1,0 +1,250 @@
+// 颜色
+:root {
+  --text-color-primary: #262626;
+  --text-color-regular: #595959;
+  --text-color-disabled: #d9d9d9;
+  --color-primary: #1f69ff;
+  --color-error: #fa3946;
+  --color-warning: #fa830c;
+  --color-success: #12b312;
+
+  --divider-color: #f0f0f0;
+}
+
+.echarts-tooltip {
+  width: 140px;
+  background: rgba(38, 38, 38, 0.9) !important;
+  border-radius: 4px !important;
+  color: #e3e3e3 !important;
+  .divide {
+    height: 1px;
+    margin: 8px 0;
+    background-color: #f0f0f0;
+    opacity: 0.3;
+  }
+  .flex-bt {
+    display: flex;
+    justify-content: space-between;
+  }
+  .flex-v {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .fs-12 {
+    font-size: 12px;
+  }
+  .point::before {
+    content: "";
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    margin-right: 5px;
+  }
+  .point.red::before {
+    background-color: #fa3946;
+  }
+  .point.orange::before {
+    background-color: #fa830c;
+  }
+  .point.yellow::before {
+    background-color: #fbb602;
+  }
+  .point.green::before {
+    background-color: #12b312;
+  }
+}
+
+.table-active-text {
+  color: #1f69ff;
+  cursor: pointer;
+}
+
+.ds-datetime-range-wrapper {
+  width: 362px !important;
+  .ds-input {
+    width: 160px !important;
+    height: 30px;
+  }
+}
+
+
+// 告警管理全局样式
+.alarm-model-drawer {
+  .observer-alarm-el-drawer__header {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 16px 20px;
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #262626;
+  }
+  .observer-alarm-el-drawer__body {
+    padding: 0;
+  }
+  .observer-alarm-el-drawer__footer {
+    border-top: 1px solid #f0f0f0;
+    height: 72px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+  }
+  .observer-alarm-el-tabs {
+    height: 100%;
+    .observer-alarm-el-tabs__header {
+      margin-bottom: 0;
+      .observer-alarm-el-tabs__item {
+        padding-left: 20px !important;
+      }
+    }
+    .observer-alarm-el-tabs__content {
+      padding: 20px;
+      height: calc(100% - 40px);
+      overflow: auto;
+      .observer-alarm-el-tab-pane#pane-labels {
+        height: 100%;
+        background: #f7f8fa;
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+        padding: 20px;
+      }
+    }
+  }
+  .info-row {
+    display: flex;
+    padding: 4px 0;
+    .info-key {
+      width: 85px;
+      text-align: right;
+      color: #595959;
+      margin-right: 40px;
+    }
+    .info-value {
+      flex: 1;
+      overflow-x: auto;
+      overflow-y: hidden;
+      .info-value-rule {
+        background-color: #f4f4f4;
+        padding: 8px 16px;
+        .rule-name {
+          color: #1f69fe;
+          cursor: pointer;
+          margin-bottom: 6px;
+        }
+        .rule-remark {
+          max-height: 100px;
+          overflow-y: auto;
+        }
+      }
+      &.content {
+        background-color: #f4f4f4;
+        padding: 8px 16px;
+        max-height: 100px;
+        overflow-y: auto;
+      }
+      &.alarm-id-info {
+        display: flex;
+        align-items: center;
+        width: 0;
+        .alarm-id {
+          margin-right: 20px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .label-link {
+          flex-shrink: 0;
+          margin-left: 8px;
+          padding-left: 16px;
+          border-left: 1px solid #8c8c8c;
+          cursor: pointer;
+          line-height: 1;
+          color: #1f69fe;
+        }
+      }
+    }
+    &.updater-row {
+      border-top: 1px solid #f0f0f0;
+      margin-top: 8px;
+      padding-top: 20px;
+    }
+  }
+  .copy-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 16px;
+    color: #7f8288;
+    display: inline-block;
+    cursor: pointer;
+    flex-shrink: 0;
+    &:hover {
+      color: #1f69fe;
+    }
+  }
+  .copy-cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .copy-content {
+      flex: 1;
+      width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-right: 8px;
+    }
+  }
+  .label-json-pretty {
+    height: 100%;
+    overflow-y: auto;
+  }
+}
+
+.alarm-manage-container {
+  height: 100%;
+  overflow-y: auto;
+  .observer-alarm-el-tabs__item {
+    height: auto;
+    padding: 0 12px 12px;
+    .number {
+      margin-left: 8px;
+    }
+    &:not(.is-active) .number {
+      color: #bfbfbf;
+    }
+    &:hover .number {
+      color: #1F69FF;
+    }
+  }
+}
+
+// 标签和事件json内容查看弹框
+.label-event-dialog {
+  .label-container {
+    height: 400px;
+    padding: 16px 0 16px 16px;
+    background: #f7f8fa;
+    border: 1px solid #f0f0f0;
+    border-radius: 2px;
+    overflow-y: auto;
+  }
+  .label-json-pretty{
+    padding-right: 16px;
+  }
+}
+
+// 修改json-pretty组件中内容样式
+.label-json-pretty {
+  .vjs-tree-node.is-highlight, .vjs-tree-node:hover {
+    background-color: #E3E6EB;
+  }
+  .vjs-value-string {
+      color: #0C9910;
+  }
+  .vjs-value-boolean, .vjs-value-number {
+      color: #1F69FF;
+  }
+}
+

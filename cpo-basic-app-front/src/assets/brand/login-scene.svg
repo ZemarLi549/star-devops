@@ -1,0 +1,60 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="182" y1="64" x2="1274" y2="836" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4F8FF"/>
+      <stop offset="0.58" stop-color="#E9F2FF"/>
+      <stop offset="1" stop-color="#F1FCF9"/>
+    </linearGradient>
+    <linearGradient id="card" x1="228" y1="188" x2="784" y2="618" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#74B8FF"/>
+      <stop offset="0.52" stop-color="#2E72FF"/>
+      <stop offset="1" stop-color="#0FC0A8"/>
+    </linearGradient>
+    <linearGradient id="plate" x1="286" y1="256" x2="694" y2="544" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#DFF2FF"/>
+    </linearGradient>
+    <filter id="drop" x="118" y="147" width="767" height="616" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="28" stdDeviation="34" flood-color="#4B7BDB" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="1440" height="900" fill="url(#bg)"/>
+  <circle cx="318" cy="295" r="270" fill="#EAF4FF"/>
+  <circle cx="1184" cy="154" r="196" fill="#EEF9F6"/>
+  <circle cx="1232" cy="772" r="230" fill="#ECF3FF"/>
+  <path d="M0 739C188 686 311 654 446 652C663 650 809 715 980 677C1113 647 1220 588 1440 570V900H0V739Z" fill="#F8FBFF"/>
+  <g filter="url(#drop)">
+    <rect x="200" y="193" width="568" height="408" rx="40" transform="rotate(-14 200 193)" fill="url(#card)"/>
+    <rect x="268" y="254" width="362" height="232" rx="28" transform="rotate(-14 268 254)" fill="url(#plate)"/>
+    <rect x="444" y="290" width="164" height="112" rx="22" transform="rotate(-14 444 290)" fill="#FFFFFF"/>
+  </g>
+  <rect x="390" y="320" width="16" height="64" rx="8" transform="rotate(-14 390 320)" fill="#2F78FF"/>
+  <rect x="424" y="298" width="16" height="88" rx="8" transform="rotate(-14 424 298)" fill="#65ACFF"/>
+  <rect x="458" y="334" width="16" height="54" rx="8" transform="rotate(-14 458 334)" fill="#13B79F"/>
+  <path d="M537 327C562 333 576 357 570 382C563 407 539 422 513 416C488 410 474 386 480 361C487 336 511 321 537 327Z" fill="#F6C651"/>
+  <g opacity="0.95">
+    <rect x="146" y="186" width="138" height="40" rx="20" transform="rotate(-12 146 186)" fill="#2E72FF"/>
+    <text x="176" y="210" transform="rotate(-12 176 210)" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="700">微服务</text>
+  </g>
+  <g opacity="0.95">
+    <rect x="635" y="189" width="140" height="40" rx="20" transform="rotate(12 635 189)" fill="#13B79F"/>
+    <text x="667" y="213" transform="rotate(12 667 213)" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="700">AI 助手</text>
+  </g>
+  <g opacity="0.95">
+    <rect x="186" y="583" width="170" height="40" rx="20" transform="rotate(10 186 583)" fill="#65ACFF"/>
+    <text x="214" y="607" transform="rotate(10 214 607)" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="700">飞书协同数据</text>
+  </g>
+  <g opacity="0.9">
+    <path d="M809 120H1105C1147 120 1181 154 1181 196V498C1181 540 1147 574 1105 574H809C767 574 733 540 733 498V196C733 154 767 120 809 120Z" fill="#FFFFFF" fill-opacity="0.65"/>
+    <path d="M848 202H1066" stroke="#B4CFFF" stroke-width="18" stroke-linecap="round"/>
+    <path d="M848 266H1048" stroke="#D8E9FF" stroke-width="18" stroke-linecap="round"/>
+    <path d="M848 330H1088" stroke="#D8E9FF" stroke-width="18" stroke-linecap="round"/>
+    <path d="M848 394H1018" stroke="#D8E9FF" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="1120" cy="468" r="34" fill="#0FC0A8"/>
+    <path d="M1108 468L1118 478L1136 458" stroke="white" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g opacity="0.86">
+    <path d="M922 652C1018 612 1127 626 1224 678" stroke="#C6DBFF" stroke-width="3" stroke-dasharray="8 10"/>
+    <path d="M854 724C946 770 1059 782 1165 754" stroke="#D6ECE7" stroke-width="3" stroke-dasharray="8 10"/>
+  </g>
+</svg>

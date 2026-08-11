@@ -1,0 +1,18 @@
+<svg width="610" height="110" viewBox="0 0 610 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="brandGradientDark" x1="6" y1="6" x2="92" y2="104" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2A8AFF"/>
+      <stop offset="1" stop-color="#21D8B2"/>
+    </linearGradient>
+    <linearGradient id="innerGradientDark" x1="30" y1="24" x2="66" y2="82" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071328"/>
+      <stop offset="1" stop-color="#1B3F76"/>
+    </linearGradient>
+  </defs>
+  <rect x="5" y="5" width="90" height="90" rx="22" fill="url(#brandGradientDark)"/>
+  <path d="M20 24H41L29 50L41 76H20L8 50L20 24Z" fill="#CFE3FF" fill-opacity="0.74"/>
+  <path d="M80 24H59L71 50L59 76H80L92 50L80 24Z" fill="#EEFFFB" fill-opacity="0.58"/>
+  <path d="M50 16L73 27V73L50 84L27 73V27L50 16Z" fill="url(#innerGradientDark)"/>
+  <path d="M50 29L54.5 41.5L67 46L54.5 50.5L50 63L45.5 50.5L33 46L45.5 41.5L50 29Z" fill="#69FFE4"/>
+  <text x="125" y="70" fill="#FFFFFF" font-size="50" font-weight="700" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif">鑫图平台</text>
+</svg>

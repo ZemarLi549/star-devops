@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="GBK"?>
+<!--
+scan��������������Ϊtrueʱ�������ļ���������ı䣬���ᱻ���¼��أ�Ĭ��ֵΪtrue��
+scanPeriod�����ü�������ļ��Ƿ����޸ĵ�ʱ���������û�и���ʱ�䵥λ��Ĭ�ϵ�λ�Ǻ��뵱scanΪtrueʱ����������Ч��Ĭ�ϵ�ʱ����Ϊ1���ӡ�
+debug��������������Ϊtrueʱ������ӡ��logback�ڲ���־��Ϣ��ʵʱ�鿴logback����״̬��Ĭ��ֵΪfalse��
+-->
+<configuration scan="false" scanPeriod="60 seconds" debug="false">
+    <!-- ������־�ĸ�Ŀ¼,����þ���·��,���·��������bug,${catalina.base}��ʾtomcat�ĸ�·�� -->
+    <!--<property name="LOG_HOME" value="${catalina.base}/applog/" />-->
+    <property name="LOG_HOME" value="logs/" />
+    <!-- ������־�ļ����� -->
+    <property name="appName" value="channel"/>
+    <!-- ����̨��� -->
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <!--
+        ��־�����ʽ��%d��ʾ����ʱ�䣬%thread��ʾ�߳�����%-5level�����������ʾ5���ַ����
+        %logger{50} ��ʾlogger�����50���ַ��������վ��ָ %msg����־��Ϣ��%n�ǻ��з�
+        -->
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <!--%<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS,CTT} | %-5level | %blue(%X{X-B3-TraceId}) | %cyan(%thread) | %yellow(%-50logger{50} :%-4line) | %green(%msg%n)</pattern>-->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS,CTT} | %-5level | %cyan(%thread) | %yellow(%-50logger{50} :%-4line) | %green(%msg%n)</pattern>
+        </layout>
+    </appender>
+
+    <!-- error��־  ��������size������¼�ļ� -->
+    <appender name="error-out-size" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- ָ����־�ļ������� -->
+        <file>${LOG_HOME}/error/error.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/error/error.%i.log</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>9</maxIndex>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>100MB</maxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS,CTT} | %-5level | %thread | %-50logger{50} :%-4line | %msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <!-- warn��־ ��������size������¼�ļ� -->
+    <appender name="warn-out-size" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/warn/warn.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/warn/warn.%i.log</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>9</maxIndex>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>100MB</maxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS,CTT} | %-5level | %thread | %-50logger{50} :%-4line | %msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>WARN</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <!-- info��־ ��������size������¼�ļ� -->
+    <appender name="info-out-size" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/info/info.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/info/info.%i.log</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>9</maxIndex>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>100MB</maxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS,CTT} | %-5level | %thread | %-50logger{50} :%-4line | %msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <!-- info��־ ��������size������¼�ļ� -->
+    <appender name="debug-out-size" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/debug/debug.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/debug/debug.%i.log</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>9</maxIndex>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>100MB</maxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS,CTT} | %-5level | %thread | %-50logger{50} :%-4line | %msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>DEBUG</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+    <!--
+    logger��Ҫ���ڴ����־����Ҳ���Զ�����־���͡�����
+    name����ʾƥ���logger����ǰ׺��Ҳ���ǰ���ǰ�벿��
+    level��Ҫ��¼����־���𣬰��� TRACE < DEBUG < INFO < WARN < ERROR
+    additivity����������children-logger�Ƿ�ʹ�� rootLogger���õ�appender���������false����ʾֻ�õ�ǰlogger��appender-ref��true����ʾ��ǰlogger��appender-ref��rootLogger��appender-ref����Ч
+    -->
+    <!-- hibernate logger -->
+    <logger name="org.hibernate" level="error" />
+    <logger name="org.elasticsearch.plugins.PluginsService" level="error"/>
+    <!-- Spring web framework logger -->
+    <logger name="org.springframework.web.servlet" level="warn"/>
+    <!--quartz��ʱ����-->
+    <logger name="org.quartz.core" level="info"/>
+    <!--redis�ײ��-->
+    <logger name="io.lettuce.core" level="error"/>
+    <logger name="io.netty" level="info"/>
+    <!--es-->
+    <logger name="org.elasticsearch" level="info"/>
+    <!--zk-->
+    <logger name="org.apache.zookeeper" level="error"/>
+    <!--redis-->
+    <logger name="org.springframework.data.redis" level="info"/>
+    <!--mybatis plus-->
+    <logger name="com.baomidou.mybatisplus" level="info"/>
+    <logger name="org.mybatis.spring.mapper.ClassPathMapperScanner" level="info"/>
+    <logger name="com.baomidou.mybatisplus.core.injector.AbstractMethod" level="error"/>
+    <logger name="com.baomidou.mybatisplus.core.metadata.TableInfoHelper" level="error"/>
+    <!--
+    root��logger�Ǹ��ӹ�ϵ��û���ر�����Ĭ��Ϊroot���κ�һ����ֻ���һ��logger��Ӧ��
+    Ҫô�Ƕ����logger��Ҫô��root���жϵĹؼ������ҵ����logger��Ȼ���ж����logger��appender��level��
+    info
+    -->
+    <root level="INFO">
+        <appender-ref ref="stdout" />
+        <appender-ref ref="debug-out-size" />
+        <appender-ref ref="info-out-size" />
+        <appender-ref ref="warn-out-size" />
+        <appender-ref ref="error-out-size" />
+    </root>
+</configuration>

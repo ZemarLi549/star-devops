@@ -1,0 +1,362 @@
+{
+  "meta": {
+    "moduleName": "observe-trace",
+    "moduleUrl": "/observe-trace/"
+  },
+  "menus": [
+    {
+      "menuId": 200,
+      "menuName": "全景监控",
+      "parentId": 0,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "isgroup": true,
+      "ismenu": false,
+      "isoutlink": false,
+      "menuPath": "/",
+      "icon": "",
+      "sortNum": 7,
+      "menuNo": "quanjingjiankong"
+    },
+    {
+      "menuId": 201,
+      "menuName": "应用性能监控",
+      "parentId": 200,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "isgroup": false,
+      "ismenu": true,
+      "isoutlink": false,
+      "menuPath": "/business-observe/observe-trace/general",
+      "icon": "icon-yingyongxingnengjiance1",
+      "sortNum": 3,
+      "menuNo": "yingyongxingnengjiankong",
+      "apiList": [
+        {
+          "method": "POST",
+          "path": "/graphql/getTimeInfo"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/listMetrics"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/listServicesNew"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/getErrorPm"
+        },
+        {
+          "method": "GET",
+          "path": "/log-platform/application/list"
+        },
+        {
+          "method": "GET",
+          "path": "/log-platform/log/getApplicationErrorLogCount"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/readMetricsValues"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/getServicesTopology"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/getValues"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/findEndpoint"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/listInstances"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/queryTrace"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/targets"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/builtin-boards-cates"
+        },
+        {
+          "method": "POST",
+          "path": "/api/n9e/builtin-boards-detail"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/proxy/api/v1/series"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/query-range-batch"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/host/object"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/host/middleware/list"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/host/object"
+        },
+        {
+          "method": "GET",
+          "path": "/alarm-chain/metrics/list"
+        },
+        {
+          "method": "GET",
+          "path": "/alarm-chain/rule/saveOrUpdate"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/queryEvents"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/readLabeledMetricsValues"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/readMetricsValue"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/sortMetrics"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/getAllTemplates"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/getServiceGroup"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/getEndpointDependencies"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/getEndpointInfo"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/queryStatisticsInfoParallel"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/getProfileTaskSegmentList"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/createProfileTask"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/getProfiledSegment"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/getProfileAnalyze"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/getProfileTaskLogs"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/getService"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/queryBasicTraces"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/getProfileTaskList"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/getInstance"
+        },
+        {
+          "method": "GET",
+          "path": "/alarm/metrics/list"
+        },
+        {
+          "method": "POST",
+          "path": "/alarm/rule/saveOrUpdate"
+        }
+      ]
+    },
+    {
+      "menuId": 202,
+      "menuName": "数据探索",
+      "parentId": 0,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "isgroup": true,
+      "ismenu": false,
+      "isoutlink": false,
+      "menuPath": "/",
+      "icon": "",
+      "sortNum": 0,
+      "menuNo": "shujutansuo"
+    },
+    {
+      "menuId": 203,
+      "menuName": "链路追踪",
+      "parentId": 202,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "isgroup": false,
+      "ismenu": true,
+      "isoutlink": false,
+      "menuPath": "/business-observe/observe-trace/trace",
+      "icon": "icon-lianluzhuizong1",
+      "sortNum": 2,
+      "menuNo": "lianluzhuizong",
+      "apiList": [
+        {
+          "method": "POST",
+          "path": "/graphql/getTimeInfo"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/queryBasicTraces"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/getAllTemplates"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/findEndpoint"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/listInstances"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/queryTrace"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/targets"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/builtin-boards-cates"
+        },
+        {
+          "method": "POST",
+          "path": "/api/n9e/builtin-boards-detail"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/proxy/api/v1/series"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/query-range-batch"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/host/object"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/host/middleware/list"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/host/object"
+        },
+        {
+          "method": "GET",
+          "path": "/alarm/metrics/list"
+        },
+        {
+          "method": "POST",
+          "path": "/alarm/rule/saveOrUpdate"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/getInstance"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/getService"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/getProfileTaskList"
+        }
+
+      ]
+    },
+    {
+      "menuId": 204,
+      "menuName": "接入中心",
+      "parentId": 0,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "isgroup": true,
+      "ismenu": false,
+      "isoutlink": false,
+      "menuPath": "/",
+      "icon": "",
+      "sortNum": 0,
+      "menuNo": "jieruzhongxin"
+    },
+    {
+      "menuId": 205,
+      "menuName": "数据接入",
+      "parentId": 204,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "isgroup": false,
+      "ismenu": false,
+      "isoutlink": false,
+      "menuPath": "",
+      "icon": "icon-shujujieru",
+      "sortNum": 0,
+      "menuNo": "shujujieru"
+    },
+    {
+      "menuId": 206,
+      "menuName": "链路接入",
+      "parentId": 205,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "isgroup": false,
+      "ismenu": true,
+      "isoutlink": false,
+      "menuPath": "/business-observe/observe-trace/integration-center",
+      "icon": "",
+      "sortNum": 3,
+      "menuNo": "lianlujieru",
+      "apiList": [
+        {
+          "method": "GET",
+          "path": "/api/v1/node/datagroup/plugins"
+        },
+        {
+          "method": "GET",
+          "path": "/auth/applications"
+        },
+        {
+          "method": "POST",
+          "path": "/graphql/getTimeInfo"
+        }
+      ]
+    }
+  ]
+}

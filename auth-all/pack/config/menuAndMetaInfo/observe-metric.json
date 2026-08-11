@@ -1,0 +1,709 @@
+{
+  "meta": {
+    "moduleName": "observe-metric",
+    "moduleUrl": "/observe-metric/"
+  },
+  "menus": [
+    {
+      "menuId": 400,
+      "menuName": "仪表盘",
+      "parentId": 0,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": "/business-observe/observe-metric/dashboardRebuild",
+      "isgroup": 0,
+      "ismenu": 1,
+      "isoutlink": 0,
+      "icon": "icon-yibiaopan1",
+      "sortNum": 10,
+      "menuNo": "yibiaopan",
+      "apiList": [
+        {
+          "method": "GET",
+          "path": "/api/n9e/builtin-boards-cates"
+        },
+        {
+          "method": "POST",
+          "path": "/api/n9e/busi-group/*/board/*/clone"
+        },
+        {
+          "path": "/api/n9e/busi-group/*/boards"
+        },
+        {
+          "path": "/api/n9e/board/**"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/n9e/boards"
+        },
+        {
+          "method": "POST",
+          "path": "/api/n9e/builtin-cate-favorite"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/n9e/builtin-cate-favorite/*"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/builtin-boards"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/builtin-board/*"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/dashboards/builtin/list"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/builtin-boards-cates"
+        },
+        {
+          "method": "POST",
+          "path": "/api/n9e/builtin-boards-detail"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/integrations/**"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/integrations"
+        },
+        {
+          "path": "/api/n9e/integrationDialtesting/**"
+        },
+        {
+          "path": "/api/n9e/integration/**"
+        }
+      ]
+    },
+    {
+      "menuId": 401,
+      "menuName": "告警事件",
+      "parentId": 0,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": null,
+      "isgroup": 0,
+      "ismenu": 0,
+      "isoutlink": 0,
+      "icon": "icon-gaojingshijian",
+      "sortNum": 9,
+      "menuNo": "gaojingshijian"
+    },
+    {
+      "menuId": 402,
+      "menuName": "指标告警",
+      "parentId": 401,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": "/business-observe/observe-metric/alert-event",
+      "isgroup": 0,
+      "ismenu": 1,
+      "isoutlink": 0,
+      "icon": null,
+      "sortNum": 1,
+      "menuNo": "zhibiaogaojing",
+      "apiList": [
+        {
+          "path": "/api/n9e/alert-his-events/**"
+        },
+        {
+          "path": "/api/n9e/alert-cur-events/**"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/n9e/alert-cur-events"
+        },
+        {
+          "path": "/api/n9e/busi-group/*/alert-rule/*"
+        },
+        {
+          "path": "/api/n9e/busi-group/*/alert-rules/*"
+        },
+        {
+          "path": "/api/n9e/busi-group/*/alert-rules"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/n9e/busi-group/*/alert-rule/*/validate"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/alert-rule/*"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/job_task/all"
+        },
+        {
+          "path": "/api/n9e/alert-rules/builtin/**"
+        }
+      ]
+    },
+    {
+      "menuId": 406,
+      "menuName": "全景监控",
+      "parentId": 0,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": "/",
+      "isgroup": 1,
+      "ismenu": 0,
+      "isoutlink": 0,
+      "icon": null,
+      "sortNum": 6,
+      "menuNo": "quanjingjiankong"
+    },
+    {
+      "menuId": 407,
+      "menuName": "基础设施监控",
+      "parentId": 406,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": "/",
+      "isgroup": 0,
+      "ismenu": 0,
+      "isoutlink": 0,
+      "icon": "icon-jichusheshijiance1",
+      "sortNum": 2,
+      "menuNo": "jichusheshijiankong"
+    },
+    {
+      "menuId": 408,
+      "menuName": "机器列表",
+      "parentId": 407,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": "/business-observe/observe-metric/targets",
+      "isgroup": 0,
+      "ismenu": 1,
+      "isoutlink": 0,
+      "icon": "",
+      "sortNum": 0,
+      "menuNo": "jiqiliebiao",
+      "apiList": [
+        {
+          "method": "GET",
+          "path": "/api/n9e/target/charged/list"
+        },
+        {
+          "path": "/api/n9e/targets/*"
+        },
+        {
+          "path": "/api/n9e/targets"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/builtin-boards-cates"
+        },
+        {
+          "method": "POST",
+          "path": "/api/n9e/builtin-boards-detail"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/page/column/*/fields"
+        },
+        {
+          "path": "/api/n9e/host/**"
+        }
+      ]
+    },
+    {
+      "menuId": 409,
+      "menuName": "容器列表",
+      "parentId": 407,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": "/business-observe/observe-metric/containers",
+      "isgroup": 0,
+      "ismenu": 1,
+      "isoutlink": 0,
+      "icon": null,
+      "sortNum": 0,
+      "menuNo": "rongqiliebiao",
+      "apiList": [
+        {
+          "method": "GET",
+          "path": "/api/n9e/page/column/*/fields"
+        },
+        {
+          "path": "/api/n9e/container/**"
+        },
+        {
+          "path": "/api/n9e/targets"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/builtin-boards-cates"
+        },
+        {
+          "method": "POST",
+          "path": "/api/n9e/builtin-boards-detail"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/host/middleware/list"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/host/object"
+        }
+      ]
+    },
+    {
+      "menuId": 410,
+      "menuName": "网络设备",
+      "parentId": 407,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": "/business-observe/observe-metric/network",
+      "isgroup": 0,
+      "ismenu": 1,
+      "isoutlink": 0,
+      "icon": null,
+      "sortNum": 0,
+      "menuNo": "wangluoshebeiliebiao",
+      "apiList": [
+        {
+          "path": "/api/n9e/network-device/**"
+        },
+        {
+          "method": "POST",
+          "path": "/api/n9e/network-device"
+        },
+        {
+          "path": "/api/n9e/targets"
+        }
+      ]
+    },
+    {
+      "menuId": 411,
+      "menuName": "可用性监控",
+      "parentId": 406,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": "/business-observe/observe-metric/available-monitor/task",
+      "isgroup": 0,
+      "ismenu": 1,
+      "isoutlink": 0,
+      "icon": "icon-keyongxingjiance",
+      "sortNum": 0,
+      "menuNo": "keyongxingjiankong",
+      "apiList": [
+        {
+          "path": "/api/n9e/dialtesting-task/**"
+        },
+        {
+          "path": "/api/n9e/dialtesting-point/**"
+        },
+        {
+          "path": "/api/n9e/dialtesting-task-result/**"
+        }
+      ]
+    },
+    {
+      "menuId": 412,
+      "menuName": "数据探索",
+      "parentId": 0,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": "/",
+      "isgroup": 1,
+      "ismenu": 0,
+      "isoutlink": 0,
+      "icon": null,
+      "sortNum": 0,
+      "menuNo": "shujutansuo"
+    },
+    {
+      "menuId": 413,
+      "menuName": "时序指标",
+      "parentId": 412,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": "/",
+      "isgroup": 0,
+      "ismenu": 0,
+      "isoutlink": 0,
+      "icon": "icon-shixuzhibiao3",
+      "sortNum": 3,
+      "menuNo": "shixuzhibiao"
+    },
+    {
+      "menuId": 414,
+      "menuName": "即时查询",
+      "parentId": 413,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": "/business-observe/observe-metric/metric/explorer",
+      "isgroup": 0,
+      "ismenu": 1,
+      "isoutlink": 0,
+      "icon": "",
+      "sortNum": 0,
+      "menuNo": "jishichaxun"
+    },
+    {
+      "menuId": 415,
+      "menuName": "快捷视图",
+      "parentId": 413,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": "/business-observe/observe-metric/object/explorer",
+      "isgroup": 0,
+      "ismenu": 1,
+      "isoutlink": 0,
+      "icon": "",
+      "sortNum": 0,
+      "menuNo": "kuaijieshitu",
+      "apiList": [
+        {
+          "path": "/api/n9e/metrics/desc"
+        },
+        {
+          "path": "/api/n9e/metric-views"
+        },
+        {
+          "path": "/api/n9e/dialtesting-task-result/**"
+        }
+      ]
+    },
+    {
+      "menuId": 416,
+      "menuName": "记录规则",
+      "parentId": 413,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": "/business-observe/observe-metric/recording-rules",
+      "isgroup": 0,
+      "ismenu": 1,
+      "isoutlink": 0,
+      "icon": "",
+      "sortNum": 0,
+      "menuNo": "jiluguize",
+      "apiList": [
+        {
+          "path": "/api/n9e/busi-group/*/recording-rules"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/n9e/busi-group/*/recording-rules/fields"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/n9e/busi-group/*/recording-rule/*"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/recording-rule/*"
+        }
+      ]
+    },
+    {
+      "menuId": 417,
+      "menuName": "接入中心",
+      "parentId": 0,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": "/",
+      "isgroup": 1,
+      "ismenu": 0,
+      "isoutlink": 0,
+      "icon": null,
+      "sortNum": 0,
+      "menuNo": "jieruzhongxin"
+    },
+    {
+      "menuId": 418,
+      "menuName": "数据接入",
+      "parentId": 417,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": null,
+      "isgroup": 0,
+      "ismenu": 0,
+      "isoutlink": 0,
+      "icon": "icon-shujujieru",
+      "sortNum": 5,
+      "menuNo": "shujujieru"
+    },
+    {
+      "menuId": 419,
+      "menuName": "指标接入",
+      "parentId": 418,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": "/business-observe/observe-metric/integration",
+      "isgroup": 0,
+      "ismenu": 1,
+      "isoutlink": 0,
+      "icon": null,
+      "sortNum": 4,
+      "menuNo": "zhibiaojieru",
+      "apiList": [
+        {
+          "path": "/api/n9e/datasource/**"
+        },
+        {
+          "path": "/api/n9e/datasource"
+        },
+        {
+          "path": "/api/n9e/integrations/**"
+        },
+        {
+          "path": "/api/n9e/integration/**"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/integrations"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/target/charged/list"
+        }
+      ]
+    },
+    {
+      "menuId": 420,
+      "menuName": "拨测点接入",
+      "parentId": 418,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": "/business-observe/observe-metric/probe-point/access",
+      "isgroup": 0,
+      "ismenu": 1,
+      "isoutlink": 0,
+      "icon": null,
+      "sortNum": 1,
+      "menuNo": "bocedianjieru",
+      "apiList": [
+        {
+          "path": "/api/n9e/dialtesting-point/**"
+        },
+        {
+          "path": "/api/n9e/integrations/**"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/integrations"
+        },
+        {
+          "path": "/api/n9e/integrationDialtesting/**"
+        },
+        {
+          "path": "/api/n9e/integration/**"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/target/charged/list"
+        }
+      ]
+    },
+    {
+      "menuId": 421,
+      "menuName": "进程监控",
+      "parentId": 407,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": "/business-observe/observe-metric/process",
+      "isgroup": 0,
+      "ismenu": 1,
+      "isoutlink": 0,
+      "icon": null,
+      "sortNum": 0,
+      "menuNo": "jinchengjiankong",
+      "apiList": [
+        {
+          "method": "GET",
+          "path": "/api/n9e/page/column/*/fields"
+        },
+        {
+          "path": "/api/n9e/host/process/**"
+        },
+        {
+          "path": "/api/n9e/targets"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/builtin-boards-cates"
+        },
+        {
+          "method": "POST",
+          "path": "/api/n9e/builtin-boards-detail"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/host/middleware/list"
+        },
+        {
+          "method": "GET",
+          "path": "/api/n9e/host/object"
+        }
+      ]
+    },
+    {
+      "menuId": 422,
+      "menuName": "作业管理",
+      "parentId": 0,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": null,
+      "isgroup": 0,
+      "ismenu": 0,
+      "isoutlink": 0,
+      "icon": "icon-zuoyeguanli",
+      "sortNum": 8,
+      "menuNo": "zuoyeguanli"
+    },
+    {
+      "menuId": 423,
+      "menuName": "脚本",
+      "parentId": 422,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": "/business-observe/observe-metric/work-platform/script",
+      "isgroup": 0,
+      "ismenu": 1,
+      "isoutlink": 0,
+      "icon": null,
+      "sortNum": 3,
+      "menuNo": "jiaoben",
+      "apiList": [
+        {
+          "path": "/api/v1/job_script/**"
+        }
+      ]
+    },
+    {
+      "menuId": 424,
+      "menuName": "作业任务",
+      "parentId": 422,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": "/business-observe/observe-metric/work-platform/task",
+      "isgroup": 0,
+      "ismenu": 1,
+      "isoutlink": 0,
+      "icon": null,
+      "sortNum": 2,
+      "menuNo": "zuoyerenwu",
+      "apiList": [
+        {
+          "path": "/api/v1/job_script/**"
+        },
+        {
+          "path": "/api/v1/job_task/**"
+        },
+        {
+          "path": "/api/v1/job_result/**"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/node/page"
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/node/list"
+        }
+      ]
+    },
+    {
+      "menuId": 425,
+      "menuName": "执行结果",
+      "parentId": 422,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": "/business-observe/observe-metric/work-platform/result",
+      "isgroup": 0,
+      "ismenu": 1,
+      "isoutlink": 0,
+      "icon": null,
+      "sortNum": 1,
+      "menuNo": "zhixingjieguo",
+      "apiList": [
+        {
+          "path": "/api/v1/job_result/**"
+        }
+      ]
+    },
+    {
+      "menuId": 426,
+      "menuName": "用户访问监控",
+      "parentId": 406,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": null,
+      "isgroup": 0,
+      "ismenu": 0,
+      "isoutlink": 0,
+      "icon": "icon-yonghufangwenjiankong",
+      "sortNum": 1,
+      "menuNo": "yonghufangwenjiankong"
+    },
+    {
+      "menuId": 427,
+      "menuName": "应用列表",
+      "parentId": 426,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": "/business-observe/observe-metric/rum/list",
+      "isgroup": 0,
+      "ismenu": 1,
+      "isoutlink": 0,
+      "icon": null,
+      "sortNum": 3,
+      "menuNo": "yingyongliebiao",
+      "apiList": [
+        {
+          "path": "/api/n9e/rum/app/**"
+        }
+      ]
+    },
+    {
+      "menuId": 428,
+      "menuName": "查看器",
+      "parentId": 426,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": "/business-observe/observe-metric/rum/viewer",
+      "isgroup": 0,
+      "ismenu": 1,
+      "isoutlink": 0,
+      "icon": null,
+      "sortNum": 2,
+      "menuNo": "chakanqi",
+      "apiList": [
+        {
+          "path": "/api/n9e/rum/field/**"
+        },
+        {
+          "path": "/api/n9e/rum/detail/**"
+        },
+        {
+          "path": "/api/n9e/rum/trace"
+        },
+        {
+          "path": "/api/n9e/rum/count"
+        },
+        {
+          "path": "/api/n9e/rum/page"
+        },
+        {
+          "path": "/api/n9e/rum/export"
+        },
+        {
+          "path": "/api/n9e/rum/event"
+        },
+        {
+          "path": "/api/n9e/rum/session/events"
+        },
+        {
+          "path": "/api/n9e/rum/error/agg"
+        }
+      ]
+    },
+    {
+      "menuId": 429,
+      "menuName": "分析看板",
+      "parentId": 426,
+      "moduleType": "BUSINESS_OBSERVATION",
+      "menuPath": "/business-observe/observe-metric/rum/dashboard",
+      "isgroup": 0,
+      "ismenu": 1,
+      "isoutlink": 0,
+      "icon": null,
+      "sortNum": 1,
+      "menuNo": "fenxikanban",
+      "apiList": [
+        {
+          "path": "/api/n9e/rum/field/vals"
+        },
+        {
+          "path": "/api/n9e/rum/metric"
+        },
+        {
+          "path": "/api/n9e/rum/metric/his"
+        }
+      ]
+    }
+  ]
+}

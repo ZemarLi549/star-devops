@@ -1,0 +1,78 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Built-By: lizengxin
+Class-Path: config/ lib/spring-cloud-starter-alibaba-nacos-config-2021
+ .0.5.0.jar lib/spring-cloud-alibaba-commons-2021.0.5.0.jar lib/spring
+ -context-support-1.0.11.jar lib/nacos-client-2.2.0.jar lib/nacos-auth
+ -plugin-2.2.0.jar lib/nacos-encryption-plugin-2.2.0.jar lib/commons-c
+ odec-1.15.jar lib/jackson-core-2.13.4.jar lib/jackson-databind-2.13.4
+ .2.jar lib/jackson-annotations-2.13.4.jar lib/httpasyncclient-4.1.5.j
+ ar lib/httpcore-4.4.15.jar lib/httpcore-nio-4.4.15.jar lib/httpclient
+ -4.5.13.jar lib/simpleclient-0.15.0.jar lib/simpleclient_tracer_otel-
+ 0.15.0.jar lib/simpleclient_tracer_common-0.15.0.jar lib/simpleclient
+ _tracer_otel_agent-0.15.0.jar lib/snakeyaml-1.30.jar lib/spring-cloud
+ -commons-3.1.5.jar lib/spring-security-crypto-5.7.4.jar lib/spring-cl
+ oud-context-3.1.5.jar lib/slf4j-api-1.7.36.jar lib/spring-cloud-start
+ er-alibaba-nacos-discovery-2021.0.5.0.jar lib/spring-cloud-starter-bo
+ otstrap-3.1.5.jar lib/spring-cloud-starter-3.1.5.jar lib/spring-secur
+ ity-rsa-1.0.11.RELEASE.jar lib/bcpkix-jdk15on-1.69.jar lib/bcprov-jdk
+ 15on-1.69.jar lib/bcutil-jdk15on-1.69.jar lib/spring-cloud-starter-op
+ enfeign-3.1.5.jar lib/spring-cloud-openfeign-core-3.1.5.jar lib/sprin
+ g-boot-autoconfigure-2.7.5.jar lib/feign-form-spring-3.8.0.jar lib/fe
+ ign-form-3.8.0.jar lib/commons-fileupload-1.4.jar lib/spring-web-5.3.
+ 23.jar lib/spring-beans-5.3.23.jar lib/feign-core-11.10.jar lib/feign
+ -slf4j-11.10.jar lib/spring-cloud-loadbalancer-3.1.5.jar lib/reactor-
+ core-3.4.24.jar lib/reactive-streams-1.0.4.jar lib/reactor-extra-3.4.
+ 8.jar lib/auth-service-1.0-SNAPSHOT.jar lib/spring-boot-starter-web-2
+ .7.5.jar lib/spring-boot-starter-tomcat-2.7.5.jar lib/tomcat-embed-co
+ re-9.0.68.jar lib/tomcat-embed-el-9.0.68.jar lib/tomcat-embed-websock
+ et-9.0.68.jar lib/spring-webmvc-5.3.23.jar lib/spring-context-5.3.23.
+ jar lib/spring-expression-5.3.23.jar lib/spring-boot-starter-json-2.7
+ .5.jar lib/jackson-datatype-jdk8-2.13.4.jar lib/jackson-datatype-jsr3
+ 10-2.13.4.jar lib/jackson-module-parameter-names-2.13.4.jar lib/okhtt
+ p-4.9.3.jar lib/okio-2.8.0.jar lib/kotlin-stdlib-common-1.6.21.jar li
+ b/kotlin-stdlib-1.6.21.jar lib/annotations-13.0.jar lib/hutool-all-5.
+ 8.22.jar lib/tianai-captcha-springboot-starter-1.3.3.jar lib/gson-2.9
+ .1.jar lib/spring-boot-autoconfigure-processor-2.7.5.jar lib/tianai-c
+ aptcha-1.3.3.jar lib/commons-lang3-3.12.0.jar lib/resource-manager-se
+ rvice-1.0-SNAPSHOT.jar lib/mysql-connector-j-8.0.31.jar lib/mybatis-p
+ lus-boot-starter-3.5.3.1.jar lib/mybatis-plus-3.5.3.1.jar lib/mybatis
+ -plus-extension-3.5.3.1.jar lib/mybatis-plus-core-3.5.3.1.jar lib/myb
+ atis-plus-annotation-3.5.3.1.jar lib/jsqlparser-4.4.jar lib/mybatis-3
+ .5.10.jar lib/mybatis-spring-2.0.7.jar lib/spring-boot-starter-jdbc-2
+ .7.5.jar lib/HikariCP-4.0.3.jar lib/spring-jdbc-5.3.23.jar lib/mybati
+ s-plus-join-boot-starter-1.4.11.jar lib/mybatis-plus-join-extension-1
+ .4.11.jar lib/mybatis-plus-join-core-1.4.11.jar lib/mybatis-plus-join
+ -annotation-1.4.11.jar lib/mybatis-plus-join-adapter-v33x-1.4.11.jar 
+ lib/mybatis-plus-join-adapter-base-1.4.11.jar lib/mybatis-plus-join-a
+ dapter-v3431-1.4.11.jar lib/mybatis-plus-join-adapter-v352-1.4.11.jar
+  lib/druid-spring-boot-starter-1.2.15.jar lib/druid-1.2.15.jar lib/sp
+ ring-boot-starter-aop-2.7.5.jar lib/spring-aop-5.3.23.jar lib/aspectj
+ weaver-1.9.7.jar lib/commons-io-2.15.0.jar lib/DmJdbcDriver18-8.1.3.6
+ 2.jar lib/spring-cloud-starter-loadbalancer-3.1.5.jar lib/spring-boot
+ -starter-cache-2.7.5.jar lib/spring-context-support-5.3.23.jar lib/ev
+ ictor-1.0.0.jar lib/validation-api-2.0.1.Final.jar lib/hibernate-vali
+ dator-6.2.5.Final.jar lib/jakarta.validation-api-2.0.2.jar lib/jboss-
+ logging-3.4.3.Final.jar lib/classmate-1.5.1.jar lib/common-1.0-SNAPSH
+ OT.jar lib/spring-boot-starter-data-redis-2.7.5.jar lib/spring-data-r
+ edis-2.7.5.jar lib/spring-data-keyvalue-2.7.5.jar lib/spring-data-com
+ mons-2.7.5.jar lib/spring-tx-5.3.23.jar lib/spring-oxm-5.3.23.jar lib
+ /lettuce-core-6.1.10.RELEASE.jar lib/netty-common-4.1.84.Final.jar li
+ b/netty-handler-4.1.84.Final.jar lib/netty-resolver-4.1.84.Final.jar 
+ lib/netty-buffer-4.1.84.Final.jar lib/netty-transport-native-unix-com
+ mon-4.1.84.Final.jar lib/netty-codec-4.1.84.Final.jar lib/netty-trans
+ port-4.1.84.Final.jar lib/caffeine-2.9.3.jar lib/checker-qual-3.19.0.
+ jar lib/error_prone_annotations-2.10.0.jar lib/spring-boot-starter-2.
+ 7.5.jar lib/spring-boot-2.7.5.jar lib/spring-boot-starter-logging-2.7
+ .5.jar lib/logback-classic-1.2.11.jar lib/logback-core-1.2.11.jar lib
+ /log4j-to-slf4j-2.17.2.jar lib/log4j-api-2.17.2.jar lib/jul-to-slf4j-
+ 1.7.36.jar lib/jakarta.annotation-api-1.3.5.jar lib/spring-core-5.3.2
+ 3.jar lib/spring-jcl-5.3.23.jar lib/spring-boot-starter-actuator-2.7.
+ 5.jar lib/spring-boot-actuator-autoconfigure-2.7.5.jar lib/spring-boo
+ t-actuator-2.7.5.jar lib/micrometer-core-1.9.5.jar lib/HdrHistogram-2
+ .1.12.jar lib/LatencyUtils-2.0.3.jar lib/spring-boot-configuration-pr
+ ocessor-2.7.5.jar
+Created-By: Apache Maven 3.8.1
+Build-Jdk: 1.8.0_131
+Main-Class: com.iflytek.itsc.auth.AuthApplication
+

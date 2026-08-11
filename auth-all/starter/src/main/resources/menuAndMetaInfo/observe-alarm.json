@@ -1,0 +1,752 @@
+{
+    "meta": {
+        "moduleName": "observe-alarm",
+        "moduleUrl": "/observe-alarm/"
+    },
+    "menus": [
+        {
+            "menuId": 300,
+            "menuName": "告警概览",
+            "parentId": 0,
+            "moduleType": "ALARM_MANAGEMENT",
+            "menuPath": "/alarm-center/observe-alarm/alarm-overview/index",
+            "isgroup": 0,
+            "ismenu": 1,
+            "isoutlink": 0,
+            "icon": "icon-gaojinggailan1",
+            "sortNum": 0,
+            "menuNo": "gaojinggailan",
+            "apiList": [
+                {
+                    "method": "POST",
+                    "path": "/alarm/analysis/level"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/event/compression"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/alarm/overview"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/statistics/level"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/analysis/classification"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/analysis/source"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/top/dataGroup"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/statistics/task"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/statistics/cate"
+                }
+            ]
+        },
+        {
+            "menuId": 301,
+            "menuName": "告警管理",
+            "parentId": 0,
+            "moduleType": "ALARM_MANAGEMENT",
+            "menuPath": null,
+            "isgroup": 1,
+            "ismenu": 0,
+            "isoutlink": 0,
+            "icon": null,
+            "sortNum": 0,
+            "menuNo": "gaojingguanli"
+        },
+        {
+            "menuId": 302,
+            "menuName": "我的告警",
+            "parentId": 301,
+            "moduleType": "ALARM_MANAGEMENT",
+            "menuPath": "/alarm-center/observe-alarm/self-alarm",
+            "isgroup": 0,
+            "ismenu": 1,
+            "isoutlink": 0,
+            "icon": "icon-a-wodegaojingheise",
+            "sortNum": 0,
+            "menuNo": "wodegaojing",
+            "apiList": [
+                {
+                    "method": "POST",
+                    "path": "/alarm/alarm/agg/count"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/alarm/agg/page"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/alarm/agg/detail"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/alarm/unique/page"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/event/page/agg"
+                },
+                {
+                    "method": "POST",
+                    "path": "/auth/guideState"
+                },
+                {
+                    "method": "GET",
+                    "path": "/alarm/alarm/unique/labels/*"
+                },
+                {
+                    "method": "GET",
+                    "path": "/alarm/alarm/unique/content/*"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/alarm/agg/canAck"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/alarm/agg/canClose"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/alarm/agg/close"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/alarm/agg/ack"
+                },
+                {
+                    "method": "GET",
+                    "path": "/alarm/assign/policy/list"
+                }
+            ]
+        },
+        {
+            "menuId": 303,
+            "menuName": "所有告警",
+            "parentId": 301,
+            "moduleType": "ALARM_MANAGEMENT",
+            "menuPath": "/alarm-center/observe-alarm/all-alarm",
+            "isgroup": 0,
+            "ismenu": 1,
+            "isoutlink": 0,
+            "icon": "icon-suoyougaojing",
+            "sortNum": 0,
+            "menuNo": "suoyougaojing",
+            "apiList": [
+                {
+                    "method": "POST",
+                    "path": "/alarm/alarm/agg/count"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/alarm/agg/page"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/alarm/agg/detail"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/alarm/unique/page"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/event/page/agg"
+                },
+                {
+                    "method": "POST",
+                    "path": "/auth/guideState"
+                },
+                {
+                    "method": "GET",
+                    "path": "/alarm/alarm/unique/labels/*"
+                },
+                {
+                    "method": "GET",
+                    "path": "/alarm/alarm/unique/content/*"
+                },
+                {
+                    "method": "GET",
+                    "path": "/alarm/assign/policy/list"
+                }
+            ]
+        },
+        {
+            "menuId": 304,
+            "menuName": "未分派告警",
+            "parentId": 301,
+            "moduleType": "ALARM_MANAGEMENT",
+            "menuPath": "/alarm-center/observe-alarm/not-assign-alarm",
+            "isgroup": 0,
+            "ismenu": 1,
+            "isoutlink": 0,
+            "icon": "icon-weifenpaigaojing",
+            "sortNum": 0,
+            "menuNo": "weifenpaigaojing",
+            "apiList": [
+                {
+                    "method": "POST",
+                    "path": "/alarm/alarm/unique/page/unassign"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/alarm/unique/detail/unassign"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/event/page/unique"
+                },
+                {
+                    "method": "GET",
+                    "path": "/alarm/alarm/unique/labels/*"
+                },
+                {
+                    "method": "GET",
+                    "path": "/alarm/alarm/unique/content/*"
+                }
+            ]
+        },
+        {
+            "menuId": 305,
+            "menuName": "屏蔽告警",
+            "parentId": 301,
+            "moduleType": "ALARM_MANAGEMENT",
+            "menuPath": "/alarm-center/observe-alarm/block-alarm",
+            "isgroup": 0,
+            "ismenu": 1,
+            "isoutlink": 0,
+            "icon": "icon-pingbigaojing",
+            "sortNum": 0,
+            "menuNo": "pingbigaojing",
+            "apiList": [
+                {
+                    "method": "POST",
+                    "path": "/alarm/alarm/unique/page/block"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/alarm/unique/detail/block"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/event/page/unique"
+                },
+                {
+                    "method": "GET",
+                    "path": "/alarm/alarm/unique/labels/*"
+                },
+                {
+                    "method": "GET",
+                    "path": "/alarm/alarm/unique/content/*"
+                }
+            ]
+        },
+        {
+            "menuId": 306,
+            "menuName": "所有通知",
+            "parentId": 301,
+            "moduleType": "ALARM_MANAGEMENT",
+            "menuPath": "/alarm-center/observe-alarm/all-notify",
+            "isgroup": 0,
+            "ismenu": 1,
+            "isoutlink": 0,
+            "icon": "icon-suoyoutongzhi",
+            "sortNum": 0,
+            "menuNo": "suoyoutongzhi",
+            "apiList": [
+                {
+                    "method": "POST",
+                    "path": "/alarm/notice/page"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/notice/detail"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/notify/policy/list"
+                }
+            ]
+        },
+        {
+            "menuId": 307,
+            "menuName": "告警策略",
+            "parentId": 0,
+            "moduleType": "ALARM_MANAGEMENT",
+            "menuPath": null,
+            "isgroup": 1,
+            "ismenu": 0,
+            "isoutlink": 0,
+            "icon": null,
+            "sortNum": 0,
+            "menuNo": "gaojingcelue"
+        },
+        {
+            "menuId": 308,
+            "menuName": "分派策略",
+            "parentId": 307,
+            "moduleType": "ALARM_MANAGEMENT",
+            "menuPath": "/alarm-center/observe-alarm/assign-police",
+            "isgroup": 0,
+            "ismenu": 1,
+            "isoutlink": 0,
+            "icon": "icon-fenpaicelve",
+            "sortNum": 0,
+            "menuNo": "fenpaicelue",
+            "apiList": [
+                {
+                    "method": "POST",
+                    "path": "/alarm/assign/policy/page"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/assign/policy/disable"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/assign/policy/enable"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/decision/condition/list"
+                },
+                {
+                    "method": "POST",
+                    "path": "/auth/sys/dataGroup/dataGroupTree"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/notify/group/list"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/notify/policy/list"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/decision/condition/list/metrics"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/assign/policy/create"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/assign/policy/detail"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/assign/policy/edit"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/assign/policy/delete"
+                }
+            ]
+        },
+        {
+            "menuId": 309,
+            "menuName": "配置",
+            "parentId": 0,
+            "moduleType": "ALARM_MANAGEMENT",
+            "menuPath": null,
+            "isgroup": 1,
+            "ismenu": 0,
+            "isoutlink": 0,
+            "icon": null,
+            "sortNum": 0,
+            "menuNo": "peizhi"
+        },
+        {
+            "menuId": 310,
+            "menuName": "屏蔽规则",
+            "parentId": 309,
+            "moduleType": "ALARM_MANAGEMENT",
+            "menuPath": "/alarm-center/observe-alarm/shield-rule",
+            "isgroup": 0,
+            "ismenu": 1,
+            "isoutlink": 0,
+            "icon": "icon-pingbiguize",
+            "sortNum": 0,
+            "menuNo": "pingbiguize",
+            "apiList": [
+                {
+                    "method": "POST",
+                    "path": "/alarm/block/rule/page"
+                },
+                {
+                    "method": "POST",
+                    "path": "/auth/sys/dataGroup/dataGroupTree"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/decision/condition/list"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/decision/condition/list/metrics"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/block/rule/create"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/block/rule/detail"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/block/rule/edit"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/block/rule/disable"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/block/rule/enable"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/block/rule/delete"
+                }
+            ]
+        },
+        {
+            "menuId": 311,
+            "menuName": "通知策略",
+            "parentId": 309,
+            "moduleType": "ALARM_MANAGEMENT",
+            "menuPath": "/alarm-center/observe-alarm/notice-police",
+            "isgroup": 0,
+            "ismenu": 1,
+            "isoutlink": 0,
+            "icon": "icon-tongzhicelve",
+            "sortNum": 0,
+            "menuNo": "tongzhicelue",
+            "apiList": [
+                {
+                    "method": "POST",
+                    "path": "/alarm/notify/channel/list"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/notify/policy/page"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/notify/policy/create"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/notify/policy/clone"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/notify/policy/edit"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/notify/policy/disable"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/notify/policy/enable"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/notify/policy/delete"
+                }
+            ]
+        },
+        {
+            "menuId": 312,
+            "menuName": "通知方式",
+            "parentId": 309,
+            "moduleType": "ALARM_MANAGEMENT",
+            "menuPath": "/alarm-center/observe-alarm/notice-channel",
+            "isgroup": 0,
+            "ismenu": 1,
+            "isoutlink": 0,
+            "icon": "icon-tongzhizu",
+            "sortNum": 0,
+            "menuNo": "tongzhifangshi",
+            "apiList": [
+                {
+                    "method": "POST",
+                    "path": "/alarm/notify/channel/list"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/notify/channel/edit"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/notify/channel/create"
+                }
+            ]
+        },
+        {
+            "menuId": 313,
+            "menuName": "通知组",
+            "parentId": 309,
+            "moduleType": "ALARM_MANAGEMENT",
+            "menuPath": "/alarm-center/observe-alarm/notice-group",
+            "isgroup": 0,
+            "ismenu": 1,
+            "isoutlink": 0,
+            "icon": "icon-tongzhifangshi",
+            "sortNum": 0,
+            "menuNo": "tongzhizu",
+            "apiList": [
+                {
+                    "method": "POST",
+                    "path": "/alarm/notify/group/list"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/notify/group/listByName"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/notify/group/pageUser"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/notify/group/create"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/notify/group/edit"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/notify/group/delete"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/auth/listExternalUsers"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/notify/group/addUsers"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/notify/group/deleteUser"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/notify/group/removeUsers"
+                }
+            ]
+        },
+        {
+            "menuId": 314,
+            "menuName": "自定义标签",
+            "parentId": 309,
+            "moduleType": "ALARM_MANAGEMENT",
+            "menuPath": "/alarm-center/observe-alarm/custom-label",
+            "isgroup": 0,
+            "ismenu": 1,
+            "isoutlink": 0,
+            "icon": "icon-zidingyibiaoqian",
+            "sortNum": 0,
+            "menuNo": "zidingyibiaoqian",
+            "apiList": [
+                {
+                    "method": "POST",
+                    "path": "/alarm/custom/label/page"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/label/tpl/get"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/label/tpl/create"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/label/tpl/edit"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/custom/label/test"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/custom/label/add"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/custom/label/detail"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/custom/label/edit"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/custom/label/disable"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/custom/label/enable"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/custom/label/delete"
+                }
+            ]
+        },
+        {
+            "menuId": 315,
+            "menuName": "集成",
+            "parentId": 0,
+            "moduleType": "ALARM_MANAGEMENT",
+            "menuPath": null,
+            "isgroup": 1,
+            "ismenu": 0,
+            "isoutlink": 0,
+            "icon": null,
+            "sortNum": 0,
+            "menuNo": "jicheng"
+        },
+        {
+            "menuId": 316,
+            "menuName": "监控系统",
+            "parentId": 315,
+            "moduleType": "ALARM_MANAGEMENT",
+            "menuPath": "/alarm-center/observe-alarm/monitor-sys",
+            "isgroup": 0,
+            "ismenu": 1,
+            "isoutlink": 0,
+            "icon": "icon-jiankongxitong",
+            "sortNum": 0,
+            "menuNo": "jiankongxitong",
+            "apiList": [
+                {
+                    "method": "POST",
+                    "path": "/auth/sys/dataGroup/dataGroupTree"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/auth/createToken"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/monitor/system/esight/subscribe"
+                },
+                {
+                    "method": "GET",
+                    "path": "/alarm/monitor/system/esight/cancel"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/monitor/system/fd/subscribe"
+                },
+                {
+                    "method": "GET",
+                    "path": "/alarm/monitor/system/fd/list"
+                },
+                {
+                    "method": "GET",
+                    "path": "/alarm/monitor/system/fd/delete/*"
+                },
+                {
+                    "method": "PATCH",
+                    "path": "/alarm/monitor/system/fd/update/*"
+                }
+            ]
+        },
+        {
+            "menuId": 317,
+            "menuName": "告警事件",
+            "parentId": 0,
+            "moduleType": "BUSINESS_OBSERVATION",
+            "menuPath": null,
+            "isgroup": 0,
+            "ismenu": 0,
+            "isoutlink": 0,
+            "icon": "icon-gaojingshijian",
+            "sortNum": 9,
+            "menuNo": "gaojingshijian"
+        },
+        {
+            "menuId": 318,
+            "menuName": "链路告警",
+            "parentId": 317,
+            "moduleType": "BUSINESS_OBSERVATION",
+            "menuPath": "/business-observe/observe-trace/alarm-config",
+            "isgroup": 0,
+            "ismenu": 1,
+            "isoutlink": 0,
+            "icon": null,
+            "sortNum": 2,
+            "menuNo": "lianlugaojing",
+            "apiList": [
+                {
+                    "method": "POST",
+                    "path": "/alarm/event/page"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/rule/saveOrUpdate"
+                },
+                {
+                    "method": "DELETE",
+                    "path": "/alarm/rule/*"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/rule/page"
+                },
+                {
+                    "method": "POST",
+                    "path": "/alarm/rule/changeActiveStatus"
+                },
+                {
+                    "method": "GET",
+                    "path": "/alarm/metrics/list"
+                },
+                {
+                    "method": "GET",
+                    "path": "/alarm/metrics/list"
+                },
+                {
+                    "method": "POST",
+                    "path": "/graphql/getTimeInfo"
+                },
+                {
+                    "method": "POST",
+                    "path": "/graphql/listServicesNew"
+                },
+                {
+                    "method": "POST",
+                    "path": "/graphql/listInstances"
+                },
+                {
+                    "method": "POST",
+                    "path": "/graphql/findEndpoint"
+                }
+
+                ]
+        }
+    ]
+}

@@ -1,0 +1,4 @@
+// 命名空间
+@forward 'element-plus/theme-chalk/src/mixins/config.scss' with (
+  $namespace: 'observer-alarm-el'
+);

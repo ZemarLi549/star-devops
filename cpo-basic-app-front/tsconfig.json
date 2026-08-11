@@ -1,0 +1,30 @@
+/*
+ * @Author: zhewu4 
+ * @Date: 2023-11-28 14:39:52 
+ * @Last Modified by:   zhewu4 
+ * @Last Modified time: 2023-11-28 14:39:52 
+ */
+{
+  "compilerOptions": { // 用于配置 TypeScript 编译器的选项。它可以设置诸如目标版本、模块系统、输出目录、严格类型检查等编译器相关的选项
+    "target": "ESNext", //目标代码 esnext指es5678都支持 因为使用了babel 会根据浏览器的需要来觉得如何适配 如果使用esc转化  需要写成es5
+    "useDefineForClassFields": true,
+    "module": "ESNext",  // esnext表示使用es module
+    "moduleResolution": "Node", // 按照node的方式去解析模块 import "/index.node"
+    "strict": false,
+    "jsx": "preserve", // 对jsx进行怎么样的处理 preserve保留不处理 因为我们使用了babel 它会去处理
+    "sourceMap": true, // 要不要生成映射文件(ts -> js)
+    "resolveJsonModule": true,
+    "isolatedModules": true, // 指定是否将每个文件作为单独的模块，默认为true，他不可以和declaration同时设定
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM"], // 可以指定在项目中可以使用哪些库里的类型(Proxy/Window/Document)
+    "skipLibCheck": true, // 跳过一些库的类型检测 (axios -> 类型/ lodash -> @types/lodash / 其他的第三方)
+    "noEmit": true,
+    "baseUrl": "./", // 文件路径在解析时, 基本url
+    "paths": { // 路径解析(类似于webpack alias)
+      "@/*": ["src/*"]
+    },
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": ["node_modules"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

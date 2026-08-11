@@ -1,0 +1,350 @@
+{
+    "meta": {
+        "moduleName": "observe-log",
+        "moduleUrl": "/observe-log/"
+    },
+    "menus": [
+        {
+            "menuId": 100,
+            "menuName": "告警事件",
+            "parentId": 0,
+            "moduleType": "BUSINESS_OBSERVATION",
+            "isgroup": false,
+            "ismenu": false,
+            "isoutlink": false,
+            "menuPath": "",
+            "icon": "icon-gaojingshijian",
+            "sortNum": 9,
+            "menuNo": "gaojingshijian"
+        },
+        {
+            "menuId": 101,
+            "menuName": "日志告警",
+            "parentId": 100,
+            "moduleType": "BUSINESS_OBSERVATION",
+            "isgroup": false,
+            "ismenu": true,
+            "isoutlink": false,
+            "menuPath": "/business-observe/observe-log/alarm-config",
+            "icon": "",
+            "sortNum": 3,
+            "menuNo": "rizhigaojing",
+            "apiList": [
+                {
+                    "method": "GET",
+                    "path": "/log-platform/alarm/event/list"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/application/list"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/alarm/rule/list"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/alarm/rule/detail"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/alarm/rule/checkSql"
+                },
+                {
+                    "method": "POST",
+                    "path": "/log-platform/alarm/rule/update"
+                },
+                {
+                    "method": "POST",
+                    "path": "/log-platform/alarm/rule/enable"
+                },
+                {
+                    "method": "POST",
+                    "path": "/log-platform/alarm/rule/add"
+                },
+                {
+                    "method": "POST",
+                    "path": "/log-platform/alarm/rule/delete"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/alarm/event/detail"
+                }
+            ]
+        },
+        {
+            "menuId": 102,
+            "menuName": "数据探索",
+            "parentId": 0,
+            "moduleType": "BUSINESS_OBSERVATION",
+            "isgroup": true,
+            "ismenu": false,
+            "isoutlink": false,
+            "menuPath": "/",
+            "icon": "",
+            "sortNum": 1,
+            "menuNo": "shujutansuo"
+        },
+        {
+            "menuId": 103,
+            "menuName": "日志分析",
+            "parentId": 102,
+            "moduleType": "BUSINESS_OBSERVATION",
+            "isgroup": false,
+            "ismenu": false,
+            "isoutlink": false,
+            "menuPath": "",
+            "icon": "icon-rizhijiansuo",
+            "sortNum": 0,
+            "menuNo": "rizhifenxi"
+        },
+        {
+            "menuId": 104,
+            "menuName": "日志检索",
+            "parentId": 103,
+            "moduleType": "BUSINESS_OBSERVATION",
+            "isgroup": false,
+            "ismenu": true,
+            "isoutlink": false,
+            "menuPath": "/business-observe/observe-log/log-analysis",
+            "icon": "",
+            "sortNum": 0,
+            "menuNo": "rizhijiansuo",
+            "apiList": [
+                {
+                    "method": "GET",
+                    "path": "/log-platform/application/list"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/config/getConfig"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/config/getAppConfig"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/operator/list"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/operator/dataTypeOperatorList"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/application/getLogRecordColumn"
+                },
+                {
+                    "method": "POST",
+                    "path": "/log-platform/analysis/logDistribution"
+                },
+                {
+                    "method": "POST",
+                    "path": "/log-platform/log/getLogs"
+                },
+                {
+                    "method": "POST",
+                    "path": "/log-platform/log/exportLog"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/analysis/function"
+                },
+                {
+                    "method": "POST",
+                    "path": "/log-platform/analysis/chart"
+                },
+                {
+                    "method": "POST",
+                    "path": "/log-platform/analysis/errorType"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/application/getColumnValueProportion"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/alarm/rule/checkSql"
+                },
+                {
+                    "method": "POST",
+                    "path": "/log-platform/alarm/rule/add"
+                },
+                {
+                    "method": "POST",
+                    "path": "/log-platform/analysis/getErrorLogDistribution"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/log/detail"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/log/context"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/application/snapshot/list"
+                },
+                {
+                    "method": "POST",
+                    "path": "/log-platform/application/snapshot/save"
+                },
+                {
+                    "method": "DELETE",
+                    "path": "/log-platform/application/snapshot/delete"
+                },
+                {
+                    "method": "POST",
+                    "path": "/api/n9e/builtin-boards-detail"
+                },
+                {
+                    "method": "GET",
+                    "path": "/api/n9e/proxy/api/v1/series"
+                },
+                {
+                    "method": "POST",
+                    "path": "/api/n9e/query-range-batch"
+                },
+                {
+                    "method": "GET",
+                    "path": "/api/n9e/builtin-boards-cates"
+                },
+                {
+                    "method": "GET",
+                    "path": "/api/n9e/targets"
+                },
+                {
+                    "method": "GET",
+                    "path": "/api/n9e/host/middleware/list"
+                },
+                {
+                    "method": "GET",
+                    "path": "/api/n9e/host/object"
+                }
+            ]
+        },
+        {
+            "menuId": 105,
+            "menuName": "接入中心",
+            "parentId": 0,
+            "moduleType": "BUSINESS_OBSERVATION",
+            "isgroup": true,
+            "ismenu": false,
+            "isoutlink": false,
+            "menuPath": "/",
+            "icon": "",
+            "sortNum": 0,
+            "menuNo": "jieruzhongxin"
+        },
+        {
+            "menuId": 106,
+            "menuName": "数据接入",
+            "parentId": 105,
+            "moduleType": "BUSINESS_OBSERVATION",
+            "isgroup": false,
+            "ismenu": false,
+            "isoutlink": false,
+            "menuPath": "",
+            "icon": "icon-shujujieru",
+            "sortNum": 0,
+            "menuNo": "shujujieru"
+        },
+        {
+            "menuId": 107,
+            "menuName": "日志接入",
+            "parentId": 106,
+            "moduleType": "BUSINESS_OBSERVATION",
+            "isgroup": false,
+            "ismenu": true,
+            "isoutlink": false,
+            "menuPath": "/business-observe/observe-log/integration-center",
+            "icon": "",
+            "sortNum": 2,
+            "menuNo": "rizhijieru",
+            "apiList": [
+                {
+                    "method": "GET",
+                    "path": "/log-platform/application/list/all"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/application/access/plugin/info"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/application/access/info"
+                },
+                {
+                    "method": "POST",
+                    "path": "/log-platform/application/access/checkStatus"
+                },
+                {
+                    "method": "POST",
+                    "path": "/log-platform/application/access/quick"
+                },
+                {
+                    "method": "POST",
+                    "path": "/log-platform/application/access/quickRepair"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/application/access/config/vectorConfigPreview"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/application/access/detail"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/application/access/getDataType"
+                },
+                {
+                    "method": "POST",
+                    "path": "/log-platform/log/field/parse"
+                },
+                {
+                    "method": "POST",
+                    "path": "/log-platform/application/access/config"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/log/getParseFailedLogs"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/application/access/getPredefinedConfig"
+                },
+                {
+                    "method": "POST",
+                    "path": "/log-platform/application/access/config/draftSave"
+                },
+                {
+                    "method": "POST",
+                    "path": "/log-platform/application/access/config/draftDelete"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/application/access/config/draftDetail"
+                },
+                {
+                    "method": "DELETE",
+                    "path": "/log-platform/application/access/config/delete"
+                },
+                {
+                    "method": "POST",
+                    "path": "/log-platform/application/access/config/startRegexCheck"
+                },
+                {
+                    "method": "POST",
+                    "path": "/log-platform/application/access/config/regexCheck"
+                },
+                {
+                    "method": "GET",
+                    "path": "/log-platform/config/getConfig"
+                }
+            ]
+        }
+    ]
+}

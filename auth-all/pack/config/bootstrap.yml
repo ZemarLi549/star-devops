@@ -1,0 +1,32 @@
+auth:
+  nacos:
+    server-addr: 192.168.32.128:8848
+    username: nacos
+    password: nacos
+    namespace: st-observable
+
+spring:
+  main:
+    allow-circular-references: true
+  application:
+    name: auth
+  cloud:
+    nacos:
+      config:
+        server-addr: ${auth.nacos.server-addr}
+        username: ${auth.nacos.username}
+        password: ${auth.nacos.password}
+        file-extension: yaml
+        namespace: ${auth.nacos.namespace}
+        extension-configs[0]:
+          group: ${AUTH_NACOS_SERVER_GROUP:auth-all}
+          data-id: application.yaml
+          refresh: true
+        enabled: true  # 开启/关闭使用配置中心配置
+        refresh-enabled: true
+      discovery:
+        server-addr: ${auth.nacos.server-addr}
+        username: ${auth.nacos.username}
+        password: ${auth.nacos.password}
+        namespace: ${auth.nacos.namespace}
+        enabled: true   # 开启/关闭使用注册中心

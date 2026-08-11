@@ -1,0 +1,9 @@
+node_modules
+dist
+dist-ssr
+stats.html
+.vite
+.env
+.env.*
+*.local
+coverage

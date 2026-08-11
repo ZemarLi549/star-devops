@@ -1,0 +1,208 @@
+{
+    "meta": {
+        "moduleName": "observe-config",
+        "moduleUrl": "/observe-config/"
+    },
+    "menus": [
+  {
+    "menuId": 500,
+    "menuName": "准备",
+    "parentId": 0,
+    "moduleType": "ENVIRONMENT_CONFIGURATION",
+    "menuPath": "/",
+    "isgroup": 1,
+    "ismenu": 0,
+    "isoutlink": 0,
+    "icon": "",
+    "sortNum": 0,
+    "menuNo": "zhunbei"
+  },
+  {
+    "menuId": 501,
+    "menuName": "安装盒管理",
+    "parentId": 500,
+    "moduleType": "ENVIRONMENT_CONFIGURATION",
+    "menuPath": "/environment-config/observe-config/config/installBox",
+    "isgroup": 0,
+    "ismenu": 1,
+    "isoutlink": 0,
+    "icon": "icon-anzhuangheguanli",
+    "sortNum": 3,
+    "menuNo": "anzhuangheguanli",
+    "apiList": [
+      {
+        "path": "/api/v1/agent_package/box/*"
+      },
+	  {
+        "method": "POST",
+        "path": "/api/v1/agent_package/upload"
+      }
+    ]
+  },
+   {
+    "menuId": 502,
+    "menuName": "Agent环境管理",
+    "parentId": 500,
+    "moduleType": "ENVIRONMENT_CONFIGURATION",
+    "menuPath": "/environment-config/observe-config/config/index",
+    "isgroup": 0,
+    "ismenu": 1,
+    "isoutlink": 0,
+    "icon": "icon-Agenthuanjingguanli",
+    "sortNum": 2,
+    "menuNo": "agenthuanjingguanli",
+    "apiList": [
+	  {
+        "path": "/api/v1/agent_package/**"
+      }
+	]
+  },
+  {
+    "menuId": 503,
+    "menuName": "插件管理",
+    "parentId": 500,
+    "moduleType": "ENVIRONMENT_CONFIGURATION",
+    "menuPath": "/environment-config/observe-config/plugin/pluginList",
+    "isgroup": 0,
+    "ismenu": 1,
+    "isoutlink": 0,
+    "icon": "icon-chajianguanli",
+    "sortNum": 1,
+    "menuNo": "chajianguanli",
+    "apiList": [
+	  {
+        "path": "/api/v1/plugin/**"
+      }
+	]
+  },
+  {
+    "menuId": 504,
+    "menuName": "操作",
+    "parentId": 0,
+    "moduleType": "ENVIRONMENT_CONFIGURATION",
+    "menuPath": "/",
+    "isgroup": 1,
+    "ismenu": 0,
+    "isoutlink": 0,
+    "icon": "",
+    "sortNum": 0,
+    "menuNo": "caozuo"
+  },
+  {
+    "menuId": 505,
+    "menuName": "Agent管理",
+    "parentId": 504,
+    "moduleType": "ENVIRONMENT_CONFIGURATION",
+    "menuPath": "/environment-config/observe-config/agent/agentList",
+    "isgroup": 0,
+    "ismenu": 1,
+    "isoutlink": 0,
+    "icon": "icon-agentguanli",
+    "sortNum": 0,
+    "menuNo": "agentguanli",
+    "apiList": [
+	  {
+        "method": "GET",
+        "path": "/api/v1/agent_package/list"
+      },
+	  {
+        "path": "/api/v1/node/**"
+      },
+	  {
+        "method": "POST",
+        "path": "/api/v1/node"
+      },
+	  {
+        "method": "POST",
+        "path": "/api/v1/update/command"
+      },
+	  {
+        "method": "GET",
+        "path": "/api/v1/plugin/baseinfo/list"
+      },
+	  {
+        "method": "POST",
+        "path": "/auth/sys/dataGroup/dataGroupTree"
+      },
+	  {
+        "method": "POST",
+        "path": "/api/v1/internal/operate"
+      }
+	]
+  },
+  {
+    "menuId": 506,
+    "menuName": "Proxy管理",
+    "parentId": 504,
+    "moduleType": "ENVIRONMENT_CONFIGURATION",
+    "menuPath": "/environment-config/observe-config/proxy/proxyList",
+    "isgroup": 0,
+    "ismenu": 1,
+    "isoutlink": 0,
+    "icon": "icon-Proxyguanli",
+    "sortNum": 0,
+    "menuNo": "proxyguanli",
+    "apiList": [
+	  {
+        "method": "GET",
+        "path": "/api/v1/agent_package/list"
+      },	
+	  {
+        "path": "/api/v1/proxy/*"
+      },
+	  {
+        "path": "/api/v1/node/**"
+      },
+	  {
+        "method": "POST",
+        "path": "/api/v1/update/command"
+      },
+	  {
+        "method": "POST",
+        "path": "/api/v1/internal/operate"
+      }
+	]
+  },
+  {
+    "menuId": 507,
+    "menuName": "插件操作",
+    "parentId": 504,
+    "moduleType": "ENVIRONMENT_CONFIGURATION",
+    "menuPath": "/environment-config/observe-config/plugin/pluginSteps",
+    "isgroup": 0,
+    "ismenu": 1,
+    "isoutlink": 0,
+    "icon": "icon-chajiancaozuo",
+    "sortNum": 0,
+    "menuNo": "chajiancaozuo",
+    "apiList": [
+	  {
+        "method": "GET",
+        "path": "/api/v1/agent_package/list"
+      },
+	  {
+        "path": "/api/v1/plugin/**"
+      }
+	]
+  },
+  {
+    "menuId": 508,
+    "menuName": "任务历史",
+    "parentId": 504,
+    "moduleType": "ENVIRONMENT_CONFIGURATION",
+    "menuPath": "/environment-config/observe-config/task/taskList",
+    "isgroup": 0,
+    "ismenu": 1,
+    "isoutlink": 0,
+    "icon": "icon-renwulishi",
+    "sortNum": 0,
+    "menuNo": "renwulishi",
+    "apiList": [
+	  {
+        "method": "GET",
+        "path": "/api/v1/node/deploy/task/**"
+      }
+	]
+  }
+  ]
+}

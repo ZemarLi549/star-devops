@@ -1,0 +1,10 @@
+data/
+logs/
+*.pid
+dist/
+releases/
+.tmp-package/
+collector
+config/application.yaml
+feishu-auth-qrcode.png
+*.log
