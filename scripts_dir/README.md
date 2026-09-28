@@ -14,8 +14,10 @@
 - `build-go-service.sh`
 - `bootstrap-python-service.sh`
 - `start-cpo-api-gateway.sh`
+- `start-cpo-ai-productivity-front.sh`
 - `start-cpo-ai-productivity-service.sh`
 - `stop-cpo-api-gateway.sh`
+- `stop-cpo-ai-productivity-front.sh`
 - `stop-service.sh`
 - `stop-python-service.sh`
 - `validate-cpo-api-gateway.sh`

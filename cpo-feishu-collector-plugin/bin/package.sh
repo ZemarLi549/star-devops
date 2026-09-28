@@ -67,6 +67,7 @@ build_target() {
 
   cp "$ROOT_DIR/bin/install.sh" "$stage_dir/bin/"
   cp "$ROOT_DIR/bin/quick-deploy.sh" "$stage_dir/bin/"
+  cp "$ROOT_DIR/bin/collect-once.sh" "$stage_dir/bin/"
   cp "$ROOT_DIR/bin/start.sh" "$stage_dir/bin/"
   cp "$ROOT_DIR/bin/stop.sh" "$stage_dir/bin/"
   cp "$ROOT_DIR/bin/show-report.sh" "$stage_dir/bin/"

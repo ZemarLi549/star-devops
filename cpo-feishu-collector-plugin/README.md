@@ -33,7 +33,7 @@
 ```bash
 bash bin/install.sh E0028517
 bash bin/authorize.sh E0028517
-bash bin/collect-e0028517.sh
+bash bin/collect-once.sh --user E0028517
 ```
 
 查看输出：

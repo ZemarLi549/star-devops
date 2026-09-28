@@ -67,6 +67,7 @@ export enum PROJECT_MAP {
   OBSERVE_CONFIG = 'observe-config',
   OBSERVE_LOG = 'observe-log',
   OBSERVE_ALARM = 'observe-alarm',
+  AI_PRODUCTIVITY = 'ai-productivity',
 }
 
 interface MicroAppDataAll {
@@ -91,5 +92,8 @@ export const microAppsDataAll: MicroAppDataAll[] = [
   }, {
     name: PROJECT_MAP.OBSERVE_ALARM,
     activeRule: ["/alarm-center/observe-alarm"],
+  }, {
+    name: PROJECT_MAP.AI_PRODUCTIVITY,
+    activeRule: ["/ai-productivity"],
   }
 ]

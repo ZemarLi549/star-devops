@@ -96,6 +96,10 @@ export const microAppLoad = async () => {
             moduleUrl: 'http://localhost:3005/'
             //  moduleUrl: 'http://172.30.34.73/observe-alarm/'
           },
+          {
+            moduleName: 'ai-productivity',
+            moduleUrl: 'http://localhost:3011/'
+          },
         ]
       }
     } else {
@@ -144,6 +148,5 @@ if (data) {
   configStore.setDocumentUrl(accessPath.VITE_DOC_URL)
   configStore.setLoginConfig(accessPath.VITE_LOGIN_CONFIG)
 }
-
 
 

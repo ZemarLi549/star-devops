@@ -82,7 +82,6 @@
 import { computed, ref } from "vue";
 import { ElMessage } from "element-plus";
 import { useRouter } from "vue-router";
-import { useConfigStore } from "@/stores/modules/microConfig";
 
 defineProps(["isDragging"]);
 
@@ -95,11 +94,9 @@ type ServiceCard = {
   hint: string;
   actionLabel: string;
   route?: string;
-  docPath?: string;
 };
 
 const router = useRouter();
-const configStore = useConfigStore();
 
 const services: ServiceCard[] = [
   {
@@ -110,37 +107,7 @@ const services: ServiceCard[] = [
     desc: "统一承接聊天统计、工单运营、日报周报和个人待办看板，是后续核心子系统。",
     hint: "独立前后端微服务。",
     actionLabel: "查看子页",
-    route: "/control/ai-productivity",
-  },
-  {
-    title: "采集配置说明",
-    subtitle: "本地 YAML / 授权 / 启停",
-    badge: "Guide",
-    state: "可用",
-    desc: "页面只保留指导信息，真实配置由用户在本地采集器 YAML 中维护。",
-    hint: "查看完整操作步骤。",
-    actionLabel: "查看说明",
-    route: "/control/productivity-config",
-  },
-  {
-    title: "SOP Doc",
-    subtitle: "部署 / 接入 / 运维文档",
-    badge: "Doc",
-    state: "外链",
-    desc: "统一沉淀部署文档、接入流程、规范约束和后续微服务接入步骤。",
-    hint: "跳转文档中心。",
-    actionLabel: "打开文档",
-    docPath: "/sop-doc",
-  },
-  {
-    title: "SOP VDOC",
-    subtitle: "可视化操作文档",
-    badge: "VDOC",
-    state: "外链",
-    desc: "承接录屏式操作说明、可视化运维手册和演示型 SOP 内容。",
-    hint: "跳转可视文档。",
-    actionLabel: "打开 VDOC",
-    docPath: "/sop-vdoc",
+    route: "/ai-productivity",
   },
   {
     title: "智能助手平台",
@@ -203,21 +170,9 @@ const showComingSoon = (entry: string) => {
   ElMessage.info(`${entry} 接口和接入方案仍在建设中`);
 };
 
-const openDoc = (docPath: string) => {
-  if (!configStore.$state.documentUrl) {
-    ElMessage.info("文档中心地址暂未配置");
-    return;
-  }
-  window.open(`${configStore.$state.documentUrl}${docPath}`);
-};
-
 const openService = (service: ServiceCard) => {
   if (service.route) {
     router.push(service.route);
-    return;
-  }
-  if (service.docPath) {
-    openDoc(service.docPath);
     return;
   }
   showComingSoon(service.title);

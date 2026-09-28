@@ -59,7 +59,7 @@ bash bin/authorize.sh E0028517
 ### 步骤 4：执行一次采集验证
 
 ```bash
-bash bin/collect-e0028517.sh
+bash bin/collect-once.sh --user E0028517
 ```
 
 ### 步骤 5：查看结果

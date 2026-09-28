@@ -28,6 +28,7 @@ insert into `sys_config`(`id`,`parent_id`,`property_type`,`property_key`,`proper
 insert into `sys_config`(`id`,`parent_id`,`property_type`,`property_key`,`property_value`,`sort_num`,`isvalid`,`remark`) values (9,0,'DEPLOY_MODULE','observe-trace','链路',0,1,'200');
 insert into `sys_config`(`id`,`parent_id`,`property_type`,`property_key`,`property_value`,`sort_num`,`isvalid`,`remark`) values (10,0,'DEPLOY_MODULE','observe-metric','指标',0,1,'400');
 insert into `sys_config`(`id`,`parent_id`,`property_type`,`property_key`,`property_value`,`sort_num`,`isvalid`,`remark`) values (11,0,'DEPLOY_MODULE','observe-config','配置',0,1,'500');
+insert into `sys_config`(`id`,`parent_id`,`property_type`,`property_key`,`property_value`,`sort_num`,`isvalid`,`remark`) values (12,0,'DEPLOY_MODULE','ai-productivity','AI人效自动化',0,1,'600');
 -- 用户表
 CREATE TABLE `sys_user` (
   `user_id` bigint(20) AUTO_INCREMENT NOT NULL COMMENT '用户id',

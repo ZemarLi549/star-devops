@@ -74,7 +74,7 @@ bash bin/authorize.sh E0028517
 ### 3.3 单次采集
 
 ```bash
-bash bin/collect-e0028517.sh
+bash bin/collect-once.sh --user E0028517
 ```
 
 ### 3.4 守护运行

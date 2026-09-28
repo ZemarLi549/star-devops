@@ -60,6 +60,39 @@
 - AI 日报 / 周报模板版本
 - 资源中心 / Zabbix 接入地址
 
+## auth-all 生产接入
+
+宿主生产态要能正常加载 `ai-productivity`，需要同时满足两件事：
+
+1. `SYS_CONFIG` 中注册 `DEPLOY_MODULE = ai-productivity`
+2. `auth-all` 类路径中存在 `menuAndMetaInfo/ai-productivity.json`
+
+当前仓库已补齐：
+
+- `starter/src/main/resources/menuAndMetaInfo/ai-productivity.json`
+- `pack/config/menuAndMetaInfo/ai-productivity.json`
+- 初始化 SQL 中的 `ai-productivity` 模块注册
+
+对于已运行环境，建议执行一次：
+
+```sql
+INSERT INTO sys_config
+  (id, parent_id, property_type, property_key, property_value, sort_num, isvalid, remark)
+SELECT 12, 0, 'DEPLOY_MODULE', 'ai-productivity', 'AI人效自动化', 0, 1, '600'
+WHERE NOT EXISTS (
+  SELECT 1 FROM sys_config
+  WHERE property_type = 'DEPLOY_MODULE' AND property_key = 'ai-productivity'
+);
+```
+
+然后由管理员触发一次：
+
+```text
+POST /metaAndMenu/ai-productivity
+```
+
+该接口会把 `moduleUrl=/ai-productivity/` 写入 `sys_deploy_meta_info`，供宿主前端通过 `/auth/meta` 读取。
+
 ## 后续接入顺序
 
 1. 接入 PostgreSQL 工单库 SQL。

@@ -28,12 +28,17 @@ export const routingWhiteList: Array<RouteRecordRaw> = [
   {
     path: "/control/productivity-config",
     name: "productivity-config",
-    component: () => import("@/views/control/productivity-config/index.vue"),
+    redirect: "/ai-productivity?tab=collector",
   },
   {
     path: "/control/ai-productivity",
     name: "ai-productivity",
-    component: () => import("@/views/control/ai-productivity/index.vue"),
+    redirect: "/ai-productivity",
+  },
+  {
+    path: "/ai-productivity/:pathMatch(.*)*",
+    name: "ai-productivity-micro-app",
+    component: () => import("@/views/Container.vue"),
   },
   {
     path: "/404",

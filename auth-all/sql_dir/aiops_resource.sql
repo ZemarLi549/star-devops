@@ -76,7 +76,7 @@ CREATE TABLE `sys_config` (
 
 LOCK TABLES `sys_config` WRITE;
 /*!40000 ALTER TABLE `sys_config` DISABLE KEYS */;
-INSERT INTO `sys_config` VALUES (1,0,'MODULE_TYPE','WORK_BENCH','工作台',0,1,''),(2,0,'MODULE_TYPE','BUSINESS_OBSERVATION','业务观测',1,1,''),(3,0,'MODULE_TYPE','ALARM_MANAGEMENT','告警管理',2,1,''),(4,0,'MODULE_TYPE','ENVIRONMENT_CONFIGURATION','环境配置',3,1,''),(5,0,'MODULE_TYPE','RESOURCE_CONTROL','权限管理',4,1,''),(6,0,'USER_DATA','DEFAULT_PWD','star@1q2w',0,1,''),(7,0,'DEPLOY_MODULE','observe-log','日志',0,1,'100'),(8,0,'DEPLOY_MODULE','observe-alarm','告警',0,1,'300'),(9,0,'DEPLOY_MODULE','observe-trace','链路',0,1,'200'),(10,0,'DEPLOY_MODULE','observe-metric','指标',0,1,'400'),(11,0,'DEPLOY_MODULE','observe-config','配置',0,1,'500');
+INSERT INTO `sys_config` VALUES (1,0,'MODULE_TYPE','WORK_BENCH','工作台',0,1,''),(2,0,'MODULE_TYPE','BUSINESS_OBSERVATION','业务观测',1,1,''),(3,0,'MODULE_TYPE','ALARM_MANAGEMENT','告警管理',2,1,''),(4,0,'MODULE_TYPE','ENVIRONMENT_CONFIGURATION','环境配置',3,1,''),(5,0,'MODULE_TYPE','RESOURCE_CONTROL','权限管理',4,1,''),(6,0,'USER_DATA','DEFAULT_PWD','star@1q2w',0,1,''),(7,0,'DEPLOY_MODULE','observe-log','日志',0,1,'100'),(8,0,'DEPLOY_MODULE','observe-alarm','告警',0,1,'300'),(9,0,'DEPLOY_MODULE','observe-trace','链路',0,1,'200'),(10,0,'DEPLOY_MODULE','observe-metric','指标',0,1,'400'),(11,0,'DEPLOY_MODULE','observe-config','配置',0,1,'500'),(12,0,'DEPLOY_MODULE','ai-productivity','AI人效自动化',0,1,'600');
 /*!40000 ALTER TABLE `sys_config` ENABLE KEYS */;
 UNLOCK TABLES;
 
